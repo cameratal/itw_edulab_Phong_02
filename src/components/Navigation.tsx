@@ -9,7 +9,7 @@ interface NavigationProps {
 
 export default function Navigation({ activeTab, onNavigate, onOpenInquiry }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
-
+  //navigation items with their corresponding IDs and labels
   const navItems = [
     { id: "home", label: "Home" },
     { id: "about", label: "Über uns" },
