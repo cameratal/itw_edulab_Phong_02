@@ -1,0 +1,8 @@
+{
+  "name": "Remix: KTM Vermittlung und Bildung",
+  "description": "Ihr professioneller Partner für Ihren Bedarf an vietnamesischen Fachkräften und deutsch-vietnamesische Personalvermittlung.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
