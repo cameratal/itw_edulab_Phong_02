@@ -439,7 +439,7 @@ export default function App() {
             <div className="lg:col-span-5 relative">
               <div className="relative mx-auto max-w-md overflow-hidden transition-transform duration-300 flex items-center justify-center aspect-[4/5]">
                 <img 
-                  src={ktmHeroBusinesswoman} 
+                  src="/vietnamese_girl_smiling_01.png"
                   alt="KTM Asian Businesswoman in Office with Logo" 
                   className="w-full h-full object-cover rounded-2xl"
                   referrerPolicy="no-referrer"
@@ -467,13 +467,13 @@ export default function App() {
               <div className="relative mx-auto max-w-lg space-y-6">
                 
                 {/* Dynamically renders photo representing Son Tran or Frank Deubler */}
-                <div className="aspect-[4/3] rounded-xl overflow-hidden bg-neutral-200 border border-neutral-150 relative">
+                <div className="aspect-[4/4] rounded-xl overflow-hidden bg-neutral-200 border border-neutral-150 relative">
                   {activeFounder === "son" ? (                    
                     <img 
                       key="son-img"
                       // src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800&h=600"
                       /**test */
-                      src="/ktm_direktor.png "
+                      src="/ktm_direktor_02.png "
                       alt="Son Tran - KTM Gründer & Geschäftsführer"
                       className="h-full w-full object-cover transition-all duration-300"
                       referrerPolicy="no-referrer"
@@ -481,7 +481,7 @@ export default function App() {
                   ) : (
                     <img 
                       key="frank-img"
-                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800&h=600"
+                      src="/ktm_Frank_Deubler.png"
                       alt="Frank Deubler - KTM Generalbevollmächtigter"
                       className="h-full w-full object-cover transition-all duration-300"
                       referrerPolicy="no-referrer"

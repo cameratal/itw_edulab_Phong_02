@@ -134,7 +134,7 @@ export default function Kontaktformular({ isSection = false }) {
           
           <div className="hidden md:block">
             <img 
-              src="/vietnamese_girl_smiling_02.jpg" 
+              src="/vietnamese_girl_smiling_02.png" 
               alt="Vietnamese girl smiling friendly" 
               className="rounded-2xl shadow-xl object-cover w-full h-full aspect-[4/5]" 
               referrerPolicy="no-referrer"
