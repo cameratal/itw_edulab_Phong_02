@@ -563,6 +563,9 @@ export default function App() {
                     <p>
                       Mit mehr als <strong className="text-neutral-950 font-semibold">15 Jahren Erfahrung</strong> in der internationalen Arbeitskräftebeschaffung übernehmen wir für Sie den gesamten Prozess – von der Vorauswahl über den Vertragsabschluss bis zur vollständigen Abwicklung des Visumsverfahrens. Alles aus einer Hand.
                     </p>
+                     <p>
+                      Eine erfolgreiche Integration beginnt bereits im Herkunftsland. Deshalb bereiten wir unsere Kandidatinnen und Kandidaten intensiv auf ihren Einsatz in Deutschland vor. Neben berufsbezogenen Deutschkenntnissen vermitteln wir auch interkulturelle Kompetenzen sowie grundlegendes Wissen über das deutsche Arbeitsleben. Dadurch können sich die Fachkräfte schneller in ihrem neuen Arbeitsumfeld zurechtfinden und langfristig erfolgreich in Ihr Unternehmen integrieren.
+                    </p>                    
                   </>
                 ) : (
                   <>
@@ -574,6 +577,9 @@ export default function App() {
                     </p>
                     <p>
                       Wir übernehmen für Sie die komplette behördliche Abwicklung – einschließlich der Kommunikation mit Kammern, Arbeitsagentur und Auslandsvertretungen. So erhalten Sie einen vollumfänglichen, sorgenfreien Service aus einer Hand.
+                    </p>
+                    <p >
+                      Prof. Dr. (UA) Frank Deubler steht Ihnen persönlich als Ansprechpartner zur Verfügung. Gerne beantwortet er Ihre Fragen per E-Mail oder Telefon und besucht Ihr Unternehmen auf Wunsch auch vor Ort, um Ihren individuellen Personalbedarf kennenzulernen. In einem persönlichen Gespräch entwickelt er gemeinsam mit Ihnen die passende Recruiting-Strategie und begleitet Sie kompetent durch den gesamten Vermittlungsprozess.
                     </p>
                   </>
                 )}
