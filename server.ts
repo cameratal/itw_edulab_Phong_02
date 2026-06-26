@@ -42,10 +42,10 @@ async function startServer() {
   // Thêm API cho Kontaktformular 
   app.post("/api/contact", async (req, res) => {
   try {
-    const { name, email, betreff, message } = req.body;
+    const { name, email, phone, betreff, message } = req.body;
 
-    if (!name || !email || !message) {
-      res.status(400).json({ error: "Bitte füllen Sie Name, E-Mail und Nachricht aus." });
+    if (!name || !email || !message || !phone) {
+      res.status(400).json({ error: "Bitte füllen Sie Name, E-Mail, Telefonnummer und Nachricht aus." });
       return;
     }
 
@@ -57,6 +57,7 @@ async function startServer() {
       text: `
 Name: ${name}
 E-Mail: ${email}
+Telefon: ${phone}
 Betreff: ${betreff || "-"}
 
 Nachricht:

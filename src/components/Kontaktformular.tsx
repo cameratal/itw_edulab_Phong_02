@@ -6,6 +6,7 @@ export default function Kontaktformular({ isSection = false }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     betreff: "",
     message: "",
   });
@@ -13,13 +14,14 @@ export default function Kontaktformular({ isSection = false }) {
   const [errors, setErrors] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const validate = () => {
-    let newErrors = { name: "", email: "", message: "" };
+    let newErrors = { name: "", email: "", phone: "", message: "" };
     let isValid = true;
 
     if (!formData.name.trim()) {
@@ -32,6 +34,15 @@ export default function Kontaktformular({ isSection = false }) {
       isValid = false;
     }
     
+    const phoneRegex = /^\+?[0-9\s-]{9,15}$/;
+    if (!formData.phone.trim()) {
+     newErrors.phone = "Bitte geben Sie Ihre Telefonnummer ein.";
+     isValid = false;
+    } else if (!phoneRegex.test(formData.phone.trim())) {
+     newErrors.phone ="Bitte geben Sie eine gültige Telefonnummer ein.";
+     isValid = false;
+  }
+
     if (!formData.message.trim()) {
       newErrors.message = "Bitte geben Sie Ihre Nachricht ein.";
       isValid = false;
@@ -66,7 +77,7 @@ export default function Kontaktformular({ isSection = false }) {
         origin: { y: 0.6 }
       });
 
-      setFormData({ name: "", email: "", betreff: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", betreff: "", message: "" });
     } catch {
       alert("Netzwerkfehler. Bitte später erneut versuchen.");
     }
@@ -104,6 +115,16 @@ export default function Kontaktformular({ isSection = false }) {
                 {errors.email && <p className="text-orange-500 text-sm mt-1">{errors.email}</p>}
               </div>
               <div className="mt-4">
+                <label className="block text-sm font-medium text-neutral-700">Telefonnummer</label>
+                <input 
+                  type="text" 
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  className="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 border p-2"
+                />
+                {errors.phone && <p className="text-orange-500 text-sm mt-1">{errors.phone}</p>}
+              </div>
+               <div className="mt-4">
                 <label className="block text-sm font-medium text-neutral-700">Betreff</label>
                 <input 
                   type="text" 
