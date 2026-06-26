@@ -41,6 +41,7 @@ export default function Kontaktformular({ isSection = false }) {
     return isValid;
   };
 
+  /** Mail send**/
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
