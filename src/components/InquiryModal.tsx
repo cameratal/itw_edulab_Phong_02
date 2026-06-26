@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { X, Check, ArrowRight, ArrowLeft, Send, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Inquiry } from "../types";
+import confetti from "canvas-confetti";
 
 interface InquiryModalProps {
   isOpen: boolean;
@@ -10,20 +11,61 @@ interface InquiryModalProps {
 
 export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState<Inquiry>({
-    companyName: "",
-    contactPerson: "",
-    email: "",
-    phone: "",
-    sector: "Pflege",
-    count: "2-5",
-    languageRequired: "B1",
-    message: "",
-  });
+
+
+  const initialFormData: Inquiry = {
+  companyName: "",
+  contactPerson: "",
+  email: "",
+  phone: "",
+  sector: "Pflege",
+  count: "2-5",
+  languageRequired: "B1",
+  message: "",
+};
+const [formData, setFormData] = useState<Inquiry>(initialFormData);
+
+  const [errors, setErrors] = useState({
+     companyName: "",
+     contactPerson: "",
+     email: "",
+     phone: "",
+    });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const [loading, setLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+
+  
+  const validate = () => {
+    let newErrors = { companyName: "", contactPerson: "", email: "", phone: "" };
+    let isValid = true;
+
+    // if (!formData.companyName.trim()) {
+    //   newErrors.companyName = "Bitte geben Sie den Namen Ihrer Firma ein.";
+    //   isValid = false;
+    // }
+
+    // if (!formData.contactPerson.trim()) {
+    //   newErrors.contactPerson =  "Bitte geben Sie den Namen Ihres Ansprechpartners ein.";
+    //   isValid = false;
+    // }
+    
+    // if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) {
+    //   newErrors.email = "Die eingegebene E-Mail-Adresse ist ungültig. Bitte geben Sie eine gültige E-Mail-Adresse ein.";
+    //   isValid = false;
+    // }
+
+    // if (!formData.phone.trim() || !/^\d+$/.test(formData.phone)) {
+    //   newErrors.phone = "Die eingegebene Telefonnummer ist ungültig. Bitte geben Sie eine gültige Telefonnummer ein.";
+    //   isValid = false;
+    // }
+    
+    // setErrors(newErrors);
+    return isValid;
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -47,35 +89,106 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
     setStep((prev) => prev - 1);
   };
 
+  /** Mail senden**/
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.companyName || !formData.contactPerson || !formData.email) {
-      setErrorMessage("Bitte füllen Sie alle erforderlichen Felder aus.");
-      return;
-    }
+   e.preventDefault();
+
+    if (!validate()) return;
 
     setLoading(true);
     setErrorMessage("");
 
     try {
-      const response = await fetch("/api/inquiry", {
-        method: "POST",
+     const response = await fetch("/api/inquiry", {
+       method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
-      });
+     });
 
-      const resData = await response.json();
-      if (response.ok && resData.success) {
-        setIsSuccess(true);
-      } else {
-        setErrorMessage(resData.error || "Es gab ein Problem. Bitte versuchen Sie es erneut.");
-      }
-    } catch (err) {
-      setErrorMessage("Netzwerkfehler. Bitte versuchen Sie es später noch einmal.");
-    } finally {
+     const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        setErrorMessage(data.error || "E-Mail konnte nicht gesendet werden.");
+        return;
+     }
+
+      setIsSuccess(true);
+
+     confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+     });
+    } catch {
+      setErrorMessage("Netzwerkfehler. Bitte später erneut versuchen.");
+   } finally {
       setLoading(false);
-    }
-  };
+  }
+};
+/** Mail senden - Ende**/
+
+  /** Mail send **/
+  //  const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (validate()) {
+  //     try {
+  //     const response = await fetch("/api/inquiry", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(formData),
+  //     });
+
+  //     const data = await response.json();
+
+  //     if (!response.ok || !data.success) {
+  //       alert(data.error || "E-Mail konnte nicht gesendet werden.");
+  //       return;
+  //     }
+
+  //     setIsSuccess(true);
+  //     confetti({
+  //       particleCount: 100,
+  //       spread: 70,
+  //       origin: { y: 0.6 }
+  //     });
+
+  //     // setFormData({ companyName: "", email: "", betreff: "", message: "" });
+  //   } catch {
+  //     alert("Netzwerkfehler. Bitte später erneut versuchen.");
+  //   }
+  //       }
+  // };
+
+
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (!formData.companyName || !formData.contactPerson || !formData.email) {
+  //     setErrorMessage("Bitte füllen Sie alle erforderlichen Felder aus.");
+  //     return;
+  //   }
+
+  //   setLoading(true);
+  //   setErrorMessage("");
+
+  //   try {
+  //     const response = await fetch("/api/inquiry", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(formData),
+  //     });
+
+  //     const resData = await response.json();
+  //     if (response.ok && resData.success) {
+  //       setIsSuccess(true);
+  //     } else {
+  //       setErrorMessage(resData.error || "Es gab ein Problem. Bitte versuchen Sie es erneut.");
+  //     }
+  //   } catch (err) {
+  //     setErrorMessage("Netzwerkfehler. Bitte versuchen Sie es später noch einmal.");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   const handleReset = () => {
     setStep(1);
@@ -160,6 +273,7 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="p-6">
+            {/* // <form noValidate onSubmit={handleSubmit} className="p-6"> */}
               {/* Progress Indicator */}
               <div className="flex items-center justify-between mb-6 px-1">
                 <span className="text-xs font-medium text-neutral-500">
@@ -347,11 +461,12 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-neutral-600 uppercase tracking-wider mb-1">
-                        Telefonnummer (optional)
+                        Telefonnummer <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="tel"
                         name="phone"
+                        required
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="+49 (0) 30 1234567"

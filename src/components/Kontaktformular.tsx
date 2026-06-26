@@ -41,7 +41,7 @@ export default function Kontaktformular({ isSection = false }) {
     return isValid;
   };
 
-  /** Mail send**/
+  /** Mail senden**/
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
@@ -72,6 +72,7 @@ export default function Kontaktformular({ isSection = false }) {
     }
         }
   };
+  /** Mail senden - Ende **/
 
   return (
     <div className={`${isSection ? "" : "py-24 bg-white min-h-screen"}`}>

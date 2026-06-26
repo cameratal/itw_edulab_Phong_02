@@ -230,7 +230,7 @@ const VisaPassportIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <path d="M32.5 53 A 14 5.5 0 0 1 55.5 53" strokeWidth="1.8" />
 
     {/* Bold custom vector letters spelling "VISA" at the bottom */}
-    <g strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="miter">
+    <g strokeWidth="3.5" strokeLinecap="square">
       {/* V */}
       <path d="M28 73.5 L32 81.5 L36 73.5" />
       {/* I */}
@@ -449,6 +449,7 @@ export default function App() {
               {/* Decorative background shape */}
               <div className="absolute -bottom-6 -right-6 -z-10 h-64 w-64 bg-amber-500/10 rounded-full blur-2xl" />
             </div>
+
           </div>
         </div>
       </section>
@@ -497,7 +498,7 @@ export default function App() {
                       </div>
                     </div>
                     <div className="text-[10px] font-semibold border border-neutral-500 rounded px-1 text-neutral-200">
-                      {activeFounder === "son" ? "Hanoi • Berlin" : "Berlin • Deutschland"}
+                      {activeFounder === "son" ? "Hanoi • Berlin" : "Berlin - Deutschland"}
                     </div>
                   </div>
                 </div>
@@ -562,29 +563,17 @@ export default function App() {
                     <p>
                       Mit mehr als <strong className="text-neutral-950 font-semibold">15 Jahren Erfahrung</strong> in der internationalen Arbeitskräftebeschaffung übernehmen wir für Sie den gesamten Prozess – von der Vorauswahl über den Vertragsabschluss bis zur vollständigen Abwicklung des Visumsverfahrens. Alles aus einer Hand.
                     </p>
-                    <p>
-                      Auch nach der Ankunft der Fachkräfte in Deutschland endet unsere Zusammenarbeit nicht. Wir unterstützen sowohl Arbeitgeber als auch Mitarbeitende bei den ersten organisatorischen Schritten, begleiten die <strong className="text-neutral-950 font-semibold">Integration</strong> und stehen als langfristiger Ansprechpartner zur Verfügung. Unser Ziel ist eine nachhaltige und erfolgreiche Zusammenarbeit, von der beide Seiten langfristig profitieren.
-                    </p>
                   </>
                 ) : (
                   <>
                     <p>
-                      {/* <strong className="text-neutral-950 font-semibold">Prof. Dr. (UA) Frank Deubler</strong> unterstützt Sie mit seiner langjährigen Expertise aus Forschung und Lehre bei einer strukturierten Analyse Ihres Personalbedarfs. So finden wir gezielt die passenden Kandidat:innen für Ihr Unternehmen. */}
-                      <strong className="text-neutral-950 font-semibold">Prof. Dr. (UA) Frank Deubler</strong> begleitet Sie während des gesamten Vermittlungsprozesses als persönlicher Ansprechpartner in Deutschland. Ob per E-Mail, telefonisch oder im persönlichen Gespräch vor Ort – Sie profitieren jederzeit von kompetenter Beratung in deutscher Sprache sowie einem direkten Kontakt für alle fachlichen und organisatorischen Anliegen.                    
+                      <strong className="text-neutral-950 font-semibold">Prof. Dr. (UA) Frank Deubler</strong> unterstützt Sie mit seiner langjährigen Expertise aus Forschung und Lehre bei einer strukturierten Analyse Ihres Personalbedarfs. So finden wir gezielt die passenden Kandidat:innen für Ihr Unternehmen.
                     </p>
                     <p>
-                      {/* Ein eigens entwickelter Eignungstest ermöglicht eine schnelle und präzise Bewertung der Profile. Dadurch können Sie qualifizierte Fachkräfte aus dem Ausland komfortabel von Deutschland aus auswählen. */}
-                      Dank seiner langjährigen Erfahrung in Forschung und Lehre unterstützt Prof. Dr. Deubler Sie bei einer strukturierten Analyse Ihres Personalbedarfs. Auf dieser Basis identifizieren wir gezielt die passenden Kandidatinnen und Kandidaten für Ihr Unternehmen.
+                      Ein eigens entwickelter Eignungstest ermöglicht eine schnelle und präzise Bewertung der Profile. Dadurch können Sie qualifizierte Fachkräfte aus dem Ausland komfortabel von Deutschland aus auswählen.
                     </p>
                     <p>
-                      {/* Wir übernehmen für Sie die komplette behördliche Abwicklung – einschließlich der Kommunikation mit Kammern, Arbeitsagentur und Auslandsvertretungen. So erhalten Sie einen vollumfänglichen, sorgenfreien Service aus einer Hand. */}
-                      Ein speziell entwickelter <strong className="text-neutral-950 font-semibold">Eignungstest</strong> ermöglicht eine schnelle und präzise Bewertung der Bewerberprofile. So können Sie qualifizierte Fachkräfte aus dem Ausland bequem und effizient direkt von Deutschland aus auswählen.
-                    </p>
-                    {/* <p>                      
-                      Darüber hinaus übernehmen wir für Sie die vollständige behördliche Abwicklung – inklusive der Kommunikation mit Kammern, der Bundesagentur für Arbeit und den zuständigen Auslandsvertretungen. Sie erhalten einen umfassenden, sorgenfreien Service aus einer Hand.
-                    </p> */}
-                    <p>                      
-                      Prof. Dr. Deubler unterstützt Unternehmen nicht nur bei der Personalgewinnung, sondern auch bei strategischen Entscheidungen im Bereich internationaler Fachkräfte. Auf Wunsch besucht er <strong className="text-neutral-950 font-semibold">Ihr Unternehmen vor Ort</strong>, analysiert den Bedarf und entwickelt gemeinsam mit Ihnen nachhaltige Lösungen.
+                      Wir übernehmen für Sie die komplette behördliche Abwicklung – einschließlich der Kommunikation mit Kammern, Arbeitsagentur und Auslandsvertretungen. So erhalten Sie einen vollumfänglichen, sorgenfreien Service aus einer Hand.
                     </p>
                   </>
                 )}

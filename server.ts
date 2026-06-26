@@ -39,7 +39,7 @@ async function startServer() {
   },
   });
 
-  // Thêm API
+  // Thêm API cho Kontaktformular 
   app.post("/api/contact", async (req, res) => {
   try {
     const { name, email, betreff, message } = req.body;
@@ -68,6 +68,55 @@ ${message}
   } catch (error: any) {
     console.error("Contact mail error:", error);
     res.status(500).json({ error: "E-Mail konnte nicht gesendet werden." });
+  }
+});
+
+
+// Thêm API cho Personalanfrage
+app.post("/api/inquiry", async (req, res) => {
+  try {
+    const {
+      companyName,
+      contactPerson,
+      email,
+      phone,
+      sector,
+      count,
+      languageRequired,
+    } = req.body;
+
+    if (!companyName || !contactPerson || !email) {
+      return res.status(400).json({
+        success: false,
+        error: "Bitte füllen Sie Unternehmen, Ansprechpartner und E-Mail aus.",
+      });
+    }
+
+    await transporter.sendMail({
+      from: `"KTM Personalanfrage" <${process.env.SMTP_USER}>`,
+      to: process.env.CONTACT_RECEIVER || "info@ktm-europa.com",
+      replyTo: email,
+      subject: `Neue Personalanfrage von ${companyName}`,
+      text: `
+Neue Personalanfrage
+
+Unternehmen: ${companyName}
+Ansprechpartner: ${contactPerson}
+E-Mail: ${email}
+Telefon: ${phone || "-"}
+Fachbereich: ${sector || "-"}
+Bedarf: ${count || "-"}
+Sprachniveau: ${languageRequired || "-"}
+      `,
+    });
+
+    return res.json({ success: true });
+  } catch (error) {
+    console.error("Inquiry mail error:", error);
+    return res.status(500).json({
+      success: false,
+      error: "E-Mail konnte nicht gesendet werden.",
+    });
   }
 });
 
