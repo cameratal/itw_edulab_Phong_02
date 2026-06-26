@@ -230,7 +230,7 @@ const VisaPassportIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <path d="M32.5 53 A 14 5.5 0 0 1 55.5 53" strokeWidth="1.8" />
 
     {/* Bold custom vector letters spelling "VISA" at the bottom */}
-    <g strokeWidth="3.5" strokeLinecap="miter">
+    <g strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="miter">
       {/* V */}
       <path d="M28 73.5 L32 81.5 L36 73.5" />
       {/* I */}
@@ -449,7 +449,6 @@ export default function App() {
               {/* Decorative background shape */}
               <div className="absolute -bottom-6 -right-6 -z-10 h-64 w-64 bg-amber-500/10 rounded-full blur-2xl" />
             </div>
-
           </div>
         </div>
       </section>
