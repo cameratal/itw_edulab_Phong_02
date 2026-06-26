@@ -22,7 +22,7 @@ export default function Footer({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-white/10 items-start">
           {/* Logo & Brand statement */}
           <div className="space-y-4">
-            <img src="/ktm_logo.png" alt="" className="w-40" />
+            <img src="/ktm_logo_bw.png" alt="" className="w-40" />
             <p className="text-sm text-neutral-400">
               Ihr Partner für Vermittlung und Bildung zwischen Vietnam und
               Deutschland.
