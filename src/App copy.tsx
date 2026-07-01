@@ -751,14 +751,41 @@ export default function App() {
 
 
       {/* AI-Supported consultation Chat (The essential request requested by the user) */}
+      <section 
+        id="ai-chat" 
+        className="py-24 bg-white scroll-mt-10"
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center gap-12">
+            
+            {/* Left panel: Info about AI advisor & recruitment specs */}
+            <div className="w-full max-w-4xl text-center space-y-6">
+              <h3 
+                className="text-4xl font-extrabold text-black sm:text-5xl tracking-tight uppercase"
+              >
+                Ihr KI-Assistent
+              </h3>
+              <div className={`transition-all duration-[700ms] ease-in-out overflow-hidden ${
+                showAIChatDetails ? 'opacity-100 max-h-[500px] mt-4 space-y-4' : 'opacity-0 max-h-0'
+              }`}>
+                <p className="text-base text-neutral-600 leading-relaxed font-light">
+                  Unser intelligenter KI-Assistent wurde mit dem Fachwissen von KTM trainiert und beantwortet Ihre Fragen rund um die Fachkräftegewinnung in Echtzeit.
+                </p>
+              </div>
 
-       {/* Ihr KI-Assistent */}
-    
-      {/* <section id="kontakt" className="py-24 bg-[#F2F2F5] border-b border-neutral-200 scroll-mt-10">
-        <Kontaktformular isSection={true} />
-      </section> */}
-      
-      <section id="kontakt" className="py-24 bg-[#FFFFFF] border-b border-neutral-200 scroll-mt-10">
+
+            </div>
+
+            {/* Right panel: Active chat window */}
+            <div className="w-full max-w-7xl">
+              <AIAdvisor />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="kontakt" className="py-24 bg-[#F2F2F5] border-b border-neutral-200 scroll-mt-10">
         <Kontaktformular isSection={true} />
       </section>
       </>

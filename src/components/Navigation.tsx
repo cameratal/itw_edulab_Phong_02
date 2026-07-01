@@ -15,7 +15,7 @@ export default function Navigation({ activeTab, onNavigate, onOpenInquiry }: Nav
     { id: "about", label: "Über uns" },
     { id: "leistungen", label: "Leistungen" },
     { id: "how-it-works", label: "Zusammenarbeit" },
-    { id: "ai-chat", label: "KI-Assistent" },
+    // { id: "ai-chat", label: "KI-Assistent" },
   ];
 
   const handleNavItemClick = (id: string) => {
