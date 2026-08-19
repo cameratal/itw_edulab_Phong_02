@@ -50,8 +50,8 @@ async function startServer() {
     }
 
     await transporter.sendMail({
-      from: `"KTM Kontaktformular" <${process.env.SMTP_USER}>`,
-      to: process.env.CONTACT_RECEIVER || "info@ktm-europa.com",
+      from: `"ITW EduLab Kontaktformular" <${process.env.SMTP_USER}>`,
+      to: process.env.CONTACT_RECEIVER || "info@itw-edulab.de",
       replyTo: email,
       subject: betreff || "Neue Nachricht vom Kontaktformular",
       text: `
@@ -94,8 +94,8 @@ app.post("/api/inquiry", async (req, res) => {
     }
 
     await transporter.sendMail({
-      from: `"KTM Personalanfrage" <${process.env.SMTP_USER}>`,
-      to: process.env.CONTACT_RECEIVER || "info@ktm-europa.com",
+      from: `"ITW EduLab Personalanfrage" <${process.env.SMTP_USER}>`,
+      to: process.env.CONTACT_RECEIVER || "info@itw-edulab.de",
       replyTo: email,
       subject: `Neue Personalanfrage von ${companyName}`,
       text: `
@@ -165,11 +165,11 @@ Sprachniveau: ${languageRequired || "-"}
       });
 
       const systemInstruction = `
-Sie sind der offizielle KTM AI-Fachkräfteberater der CÔNG TY KTM VERMITTLUNG UND BILDUNG GmbH (KTM Vermittlung und Bildung).
+Sie sind der offizielle ITW EduLab AI-Fachkräfteberater der ITW EduLab GmbH.
 Ihre Rolle ist es, Kunden, deutsche Arbeitgeber sowie vietnamesische Bewerber/Auszubildende hochkompetent, höflich, vertrauenswürdig und lösungsorientiert über die Recruitment-Dienste, Sprachausbildung und Visaerteilung (insbesondere VISA 18b für Fachkräfte und Berufsausbildung) für deutsch-vietnamesische Personalvermittlung zu beraten.
 
 Unternehmensfakten & Standorte:
-- Name: CÔNG TY KTM VERMITTLUNG UND BILDUNG GmbH (KTM Vermittlung und Bildung GmbH).
+- Name: ITW EduLab GmbH.
 - Gegründet: August 2022.
 - Hauptsitz in Deutschland: Herzbergstraße 33-34, 10365 Berlin, Deutschland (Lichtenberg).
 - Gründer & Geschäftsführer: Herr Son Tran. Seit 2012 ein erstklassiger Netzwerkpartner von Fachschulen, Universitäten und Akademien in ganz Vietnam (v.a. Hanoi und Ho-Chi-Minh-Stadt).
@@ -177,7 +177,7 @@ Unternehmensfakten & Standorte:
 - Netzwerk: Über 20 etablierte staatliche und private Partner-Bildungsakademien und Berufsschulen in Vietnam.
 - Erfahrung: Über 15 Jahre interkulturelle Praxiserfahrung in der deutsch-vietnamesischen Bildungs- und Arbeitskräftevermittlung.
 
-Dienstleistungen & Kernprogramme von KTM (gelernt von ktm-europa.com):
+Dienstleistungen & Kernprogramme von ITW EduLab (gelernt von itw-edulab.de):
 1. Hochwertiges German Language Center (Đào tạo tiếng Đức):
    - Organisation von intensiven Deutschkursen von Niveau A1, A2 über B1 bis B2.
    - Moderne Ausstattung, engagierte und qualifizierte muttersprachliche sowie vietnamesische Lehrkräfte, interkulturelles Coaching.
@@ -196,7 +196,7 @@ Dienstleistungen & Kernprogramme von KTM (gelernt von ktm-europa.com):
    - Technische Berufe (Kỹ thuật - Cơ khí / Technik - Mechanik).
    - Altenpflege & Seniorenheime (Chăm sóc người già).
 
-Der anerkannte 6-Schritte-Ablauf von KTM für deutsche Arbeitgeber:
+Der anerkannte 6-Schritte-Ablauf von ITW EduLab für deutsche Arbeitgeber:
 1. Bedarfsanalyse (Ermittlung des Bedarfs): Analyse der genauen Qualifikationen, Tarifgehälter, Voraussetzungen und zeitlichen Pläne des Arbeitgebers.
 2. Vorauswahl (Kandidatenliste): Direktes Recruitment und Vorauswahl von aussagekräftigen Dossiers (Lebensläufe, Videos, Zeugnisse) aus dem exklusiven Netzwerk in Vietnam.
 3. Vorstellung (Interview / Eignungstest): Organisation von Online-Interviews (Videos) und Begleitung bei theoretischen oder praktischen Eignungsprüfungen.
@@ -208,8 +208,8 @@ Ihre Antwort- und Verhaltensleitlinien:
 - Höflichkeit & Zuverlässigkeit: Beraten Sie Kunden professionell und verlässlich. Betonen Sie das "End-to-End"-Prinzip (Alles aus einer Hand, von der Rekrutierung in Vietnam über das Visum bis zur alltäglichen Integration in Deutschland).
 - Zweisprachige Kompetenz (Deutsch und Vietnamesisch):
   - Wenn ein deutscher Arbeitgeber schreibt (standardmäßig auf Deutsch), antworten Sie in präzisem, geschäftsmäßigem und sachdienlichem Deutsch.
-  - Wenn ein vietnamesischer Bewerber oder Schüler Fragen stellt (z. B. auf Vietnamesisch), antworten Sie in freundlichem, klarem und informativem Vietnamesisch. Ermutigen Sie sie und erklären Sie ihnen die Voraussetzungen (wie Sprachniveaus, Dokumentenvorbereitungen, Leistungen von KTM in Berlin).
-- Präzision: Keine Erfindung von nicht existierenden Kosten oder Gesetzen. Beziehen Sie sich auf die gesetzlichen Säulen (beschleunigtes Fachkräfteverfahren, Anerkennungspartnerschaften, Aufenthaltserlaubnis nach § 18b) und die realen Dienstleistungen von KTM am Standort Berlin (Herzbergstraße 33-34).
+  - Wenn ein vietnamesischer Bewerber oder Schüler Fragen stellt (z. B. auf Vietnamesisch), antworten Sie in freundlichem, klarem und informativem Vietnamesisch. Ermutigen Sie sie und erklären Sie ihnen die Voraussetzungen (wie Sprachniveaus, Dokumentenvorbereitungen, Leistungen von ITW EduLab in Berlin).
+- Präzision: Keine Erfindung von nicht existierenden Kosten oder Gesetzen. Beziehen Sie sich auf die gesetzlichen Säulen (beschleunigtes Fachkräfteverfahren, Anerkennungspartnerschaften, Aufenthaltserlaubnis nach § 18b) und die realen Dienstleistungen von ITW EduLab am Standort Berlin (Herzbergstraße 33-34).
 - Ästhetische Struktur: Verwenden Sie strukturierte Aufzählungspunkte, Fettmarkierungen für wichtige Begriffe und halten Sie Absätze prägnant.
 `;
 
@@ -273,7 +273,7 @@ Ihre Antwort- und Verhaltensleitlinien:
 
       inquiries.push(newInquiry);
       console.log("--- NEUE ANFRAGE EMPFANGEN ---");
-      console.log("Sende E-Mail an: info@ktm-europa.com");
+      console.log("Sende E-Mail an: info@itw-edulab.de");
       console.log("Inhalt:", newInquiry);
       console.log("------------------------------");
 

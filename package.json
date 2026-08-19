@@ -1,9 +1,12 @@
 {
-  "name": "react-example",
+  "name": "itw-edulab-landing",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "tailwind:sources": "node scripts/generate-tailwind-sources.mjs",
+    "predev": "npm run tailwind:sources",
+    "prebuild": "npm run tailwind:sources",
     "dev": "tsx server.ts",
     "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
     "start": "node dist/server.cjs",
@@ -25,6 +28,12 @@
     "vite": "^6.2.3"
   },
   "devDependencies": {
+    "@emnapi/core": "^1.11.3",
+    "@emnapi/runtime": "^1.11.3",
+    "@emnapi/wasi-threads": "^1.2.3",
+    "@napi-rs/wasm-runtime": "^1.2.3",
+    "@tailwindcss/oxide-wasm32-wasi": "^4.1.14",
+    "@tybys/wasm-util": "^0.10.3",
     "@types/express": "^4.17.21",
     "@types/node": "^22.14.0",
     "@types/nodemailer": "^8.0.1",
@@ -32,9 +41,17 @@
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.4.21",
     "esbuild": "^0.25.0",
+    "rollup": "npm:@rollup/wasm-node@^4.62.0",
     "tailwindcss": "^4.1.14",
+    "tslib": "^2.8.1",
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.3"
+  },
+  "comments": {
+    "overrides": "Smart App Control on this workstation blocks unsigned native .node addons, so the native Rollup binding cannot be loaded. Swap Rollup for its WASM build; @tailwindcss/oxide falls back to its own wasm32-wasi binding on its own once that package is present."
+  },
+  "overrides": {
+    "rollup": "npm:@rollup/wasm-node@^4.62.0"
   }
 }

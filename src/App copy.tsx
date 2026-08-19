@@ -8,7 +8,7 @@ import Kontaktformular from "./components/Kontaktformular";
 import InquiryModal from "./components/InquiryModal";
 import AIAdvisor from "./components/AIAdvisor";
 // @ts-ignore
-import ktmHeroBusinesswoman from "./assets/images/ktm_hero_businesswoman_v2_1781169364023.png";
+import heroBusinesswoman from "./assets/images/itw-edulab_hero_businesswoman.png";
 import { 
   ClipboardList, 
   Search, 
@@ -349,7 +349,7 @@ export default function App() {
       title: "Aufenthalts- & Arbeitserlaubnis",
       subtitle: "Vertrags- und Visumunterlagen vollständig vorbereiten",
       description: "Wir unterstützen Sie vollumfänglich bei Visa, Aufenthaltstitel und Arbeitserlaubnis.",
-      detailText: "KTM übernimmt das gesamte bürokratische Übertragungsverfahren (z. B. Beantragung der Gleichwertigkeit Ihres Berufsabschlusses in Deutschland, Erklärung zu Arbeitsverhältnissen).",
+      detailText: "ITW EduLab übernimmt das gesamte bürokratische Übertragungsverfahren (z. B. Beantragung der Gleichwertigkeit Ihres Berufsabschlusses in Deutschland, Erklärung zu Arbeitsverhältnissen).",
       icon: ContractSignatureIcon,
       color: "bg-[#111111]",
     },
@@ -413,7 +413,7 @@ export default function App() {
                 showHeroDetails ? 'opacity-100 max-h-[500px] mt-4 space-y-6' : 'opacity-0 max-h-0'
               }`}>
                 <p className="text-base text-neutral-600 sm:text-lg leading-relaxed max-w-3xl font-light">
-                  KTM Europa ist Ihr Partner für die Gewinnung von Fachkräften und Auszubildenden aus Vietnam. Wir unterstützen deutsche Unternehmen dabei, offene Stellen in personalintensiven und schwer zu besetzenden Bereichen strukturiert und verlässlich zu besetzen.
+                  ITW EduLab ist Ihr Partner für die Gewinnung von Fachkräften und Auszubildenden aus Vietnam. Wir unterstützen deutsche Unternehmen dabei, offene Stellen in personalintensiven und schwer zu besetzenden Bereichen strukturiert und verlässlich zu besetzen.
                 </p>
               </div>
 
@@ -440,7 +440,7 @@ export default function App() {
               <div className="relative mx-auto max-w-md overflow-hidden transition-transform duration-300 flex items-center justify-center aspect-[4/5]">
                 <img 
                   src="/vietnamese_girl_smiling_01.png"
-                  alt="KTM Asian Businesswoman in Office with Logo" 
+                  alt="ITW EduLab Asian Businesswoman in Office with Logo" 
                   className="w-full h-full object-cover rounded-2xl"
                   referrerPolicy="no-referrer"
                 />
@@ -473,16 +473,16 @@ export default function App() {
                       key="son-img"
                       // src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800&h=600"
                       /**test */
-                      src="/ktm_direktor_02.png "
-                      alt="Son Tran - KTM Gründer & Geschäftsführer"
+                      src="/itw-edulab_direktor_02.png "
+                      alt="Son Tran - ITW EduLab Gründer & Geschäftsführer"
                       className="h-full w-full object-cover transition-all duration-300"
                       referrerPolicy="no-referrer"
                     />                   
                   ) : (
                     <img 
                       key="frank-img"
-                      src="/ktm_Frank_Deubler.png"
-                      alt="Frank Deubler - KTM Generalbevollmächtigter"
+                      src="/itw-edulab_Frank_Deubler.png"
+                      alt="Frank Deubler - ITW EduLab Generalbevollmächtigter"
                       className="h-full w-full object-cover transition-all duration-300"
                       referrerPolicy="no-referrer"
                     />
@@ -548,14 +548,14 @@ export default function App() {
                 Wer wir sind
               </h3>
               <p className="text-xl font-extrabold text-[#1c2e4a] mb-4 tracking-tight uppercase">
-                KTM NETZWERK • HANOI • HO CHI MINH CITY • BERLIN
+                ITW EDULAB NETZWERK • HANOI • HO CHI MINH CITY • BERLIN
               </p>
               
               <div className="space-y-4 text-neutral-600 font-light text-base leading-relaxed">
                 {activeFounder === "son" ? (
                   <>
                     <p>
-                      <strong className="text-neutral-950 font-semibold">Son Tran</strong>, Gründer von KTM, ist seit 2012 ein verlässlicher Kooperationspartner von Berufsschulen, Ausbildungswerkstätten und Universitäten in Vietnam – mit Schwerpunkten in Hanoi und Ho Chi Minh Stadt.
+                      <strong className="text-neutral-950 font-semibold">Son Tran</strong>, Gründer von ITW EduLab, ist seit 2012 ein verlässlicher Kooperationspartner von Berufsschulen, Ausbildungswerkstätten und Universitäten in Vietnam – mit Schwerpunkten in Hanoi und Ho Chi Minh Stadt.
                     </p>
                     <p>
                       Unser Netzwerk umfasst derzeit <strong className="text-neutral-950 font-semibold">über 20 etablierte Partnerinstitutionen</strong> und bietet Ihnen eine breite Auswahl an qualifizierten Fachkräften aus verschiedenen Berufszweigen, unter anderem im Handwerk, in der Pflege und im Gastgewerbe.
@@ -769,7 +769,7 @@ export default function App() {
                 showAIChatDetails ? 'opacity-100 max-h-[500px] mt-4 space-y-4' : 'opacity-0 max-h-0'
               }`}>
                 <p className="text-base text-neutral-600 leading-relaxed font-light">
-                  Unser intelligenter KI-Assistent wurde mit dem Fachwissen von KTM trainiert und beantwortet Ihre Fragen rund um die Fachkräftegewinnung in Echtzeit.
+                  Unser intelligenter KI-Assistent wurde mit dem Fachwissen von ITW EduLab trainiert und beantwortet Ihre Fragen rund um die Fachkräftegewinnung in Echtzeit.
                 </p>
               </div>
 

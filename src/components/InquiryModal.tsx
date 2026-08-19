@@ -232,7 +232,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
                 Unverbindliche Personalanfrage
               </h3>
               <p className="text-xs text-neutral-500">
-                KTM Vermittlung GmbH • In wenigen Schritten zu Ihrem Wunschpersonal
+                ITW EduLab GmbH • In wenigen Schritten zu Ihrem Wunschpersonal
               </p>
             </div>
             <button
@@ -253,7 +253,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
                 Anfrage erfolgreich übermittelt!
               </h4>
               <p className="text-sm text-neutral-600 mb-6 max-w-sm mx-auto">
-                Vielen Dank für Ihr Vertrauen in KTM. Wir haben Ihre Bedarfsdaten erhalten und einer unserer Berater wird Sie innerhalb von 24 Stunden kontaktieren.
+                Vielen Dank für Ihr Vertrauen in ITW EduLab. Wir haben Ihre Bedarfsdaten erhalten und einer unserer Berater wird Sie innerhalb von 24 Stunden kontaktieren.
               </p>
               
               <div className="mb-6 rounded-lg bg-neutral-50 p-4 text-left border border-neutral-100 text-xs text-neutral-600">
@@ -358,7 +358,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
                     <div className="grid grid-cols-3 gap-2.5">
                       {[
                         { label: "Deutsch A2", val: "A2", description: "Grundlagen" },
-                        { label: "Deutsch B1", val: "B1", description: "Standard (KTM-Pflicht)" },
+                        { label: "Deutsch B1", val: "B1", description: "Standard (ITW EduLab-Pflicht)" },
                         { label: "Deutsch B2", val: "B2", description: "Fortgeschritten" },
                       ].map((lvl) => (
                         <button

@@ -8,7 +8,7 @@ export default function AIAdvisor() {
     {
       id: "initial",
       role: "model",
-      content: "Willkommen bei KTM Europa! 👋\nIch bin Ihr virtueller Assistent. Wie kann ich Ihnen heute weiterhelfen?",
+      content: "Willkommen bei ITW EduLab! 👋\nIch bin Ihr virtueller Assistent. Wie kann ich Ihnen heute weiterhelfen?",
       timestamp: new Date(),
     },
   ]);
@@ -20,7 +20,7 @@ export default function AIAdvisor() {
   const [hasScrolled, setHasScrolled] = useState(false);
 
   const quickQuestions = [
-    "Wie sichert KTM das Deutsch-Sprachniveau?",
+    "Wie sichert ITW EduLab das Deutsch-Sprachniveau?",
     "Ablauf der Pflegekräfte-Vermittlung?",
     "Welche Kosten kommen auf Arbeitgeber zu?",
     "Wie funktioniert das Visumsverfahren?",
@@ -98,7 +98,7 @@ export default function AIAdvisor() {
       {
         id: "initial",
         role: "model",
-        content: "Willkommen bei KTM Europa! 👋\nIch bin Ihr virtueller Assistent. Wie kann ich Ihnen heute weiterhelfen?",
+        content: "Willkommen bei ITW EduLab! 👋\nIch bin Ihr virtueller Assistent. Wie kann ich Ihnen heute weiterhelfen?",
         timestamp: new Date(),
       },
     ]);
@@ -154,7 +154,7 @@ export default function AIAdvisor() {
                 {msg.role === "user" ? (
                   <User className="h-4 w-4" />
                 ) : (
-                  <div className="font-bold text-[10px]">KTM</div>
+                  <div className="font-bold text-[10px]">ITW</div>
                 )}
               </div>
 
@@ -183,7 +183,7 @@ export default function AIAdvisor() {
                   <span className="h-1.5 w-1.5 rounded-full bg-neutral-400 animate-bounce duration-300" style={{ animationDelay: "150ms" }} />
                   <span className="h-1.5 w-1.5 rounded-full bg-neutral-400 animate-bounce duration-300" style={{ animationDelay: "300ms" }} />
                 </span>
-                KTM AI analysiert Ihre Anfrage...
+                ITW EduLab AI analysiert Ihre Anfrage...
               </div>
             </div>
           </div>
@@ -251,7 +251,7 @@ export default function AIAdvisor() {
       {/* Language Note */}
       <div className="py-2 px-4 bg-neutral-50 border-t border-neutral-150 text-[10px] text-neutral-400 flex justify-between items-center bg-gray-50/70">
         <span className="flex items-center gap-1 font-medium"><Languages className="h-3 w-3 text-neutral-400" /> Deutsch & Tiếng Việt unterstützt</span>
-        <span>CÔNG TY KTM VERMITTLUNG UND BILDUNG GmbH</span>
+        <span>ITW EduLab GmbH</span>
       </div>
     </div>
   );

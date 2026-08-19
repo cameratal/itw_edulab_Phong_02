@@ -38,7 +38,11 @@ export default function Navigation({ activeTab, onNavigate, onOpenInquiry }: Nav
           onClick={() => handleNavItemClick("home")}
            className="cursor-pointer flex items-center justify-center h-14"
         >
-          <img src="/ktm_logo.png" alt="" className="w-40" />
+          <img
+            src="/logo-itw-edulab.svg"
+            alt="ITW EduLab"
+            className="h-12 w-auto"
+          />
         </div>
 
         {/* Desktop Menu */}
