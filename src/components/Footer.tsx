@@ -50,9 +50,9 @@ export default function Footer({
               Repräsentanz Vietnam
             </h5>
             <div className="text-sm space-y-1 text-neutral-300">
-              <p>Trung tâm hợp tác quốc tế</p>
-              <p>Trường Cao đẳng Công nghệ cao Hà Nội</p>
-              <p>Phố Nhuệ Giang, Tây Mỗ, Hà Nội</p>
+              <p>Trường Cán Bộ Quản Lý Giáo Dục</p>
+              <p>Số 7-9 Nguyễn Bỉnh Khiêm</p>
+              <p>P. Sài Gòn, TP Hồ Chí Minh</p>
             </div>
           </div>
 

@@ -16,9 +16,9 @@ export default function Impressum() {
 
           <section>
             <h2 className="text-xl font-extrabold text-[#101d33] mb-4 tracking-tight uppercase">Repräsentanz Vietnam</h2>
-            <p>Trung tâm hợp tác quốc tế</p>
-            <p>Trường Cao đẳng Công nghệ cao Hà Nội</p>
-            <p>Phố Nhuệ Giang, Phường Tây Mỗ, Nam Từ Liêm, Hà Nội</p>
+            <p>Trường Cán Bộ Quản Lý Giáo Dục</p>
+            <p>Số 7-9 Nguyễn Bỉnh Khiêm</p>
+            <p>P. Sài Gòn, TP Hồ Chí Minh</p>
           </section>
 
           <section>

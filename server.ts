@@ -49,9 +49,10 @@ async function startServer() {
       return;
     }
 
-    await transporter.sendMail({
+    const to = process.env.CONTACT_FORM_RECEIVER || "cameratal@yahoo.com";
+    const info = await transporter.sendMail({
       from: `"ITW EduLab Kontaktformular" <${process.env.SMTP_USER}>`,
-      to: process.env.CONTACT_RECEIVER || "info@itw-edulab.de",
+      to,
       replyTo: email,
       subject: betreff || "Neue Nachricht vom Kontaktformular",
       text: `
@@ -65,9 +66,23 @@ ${message}
       `,
     });
 
+    console.log("Contact mail sent:", {
+      to,
+      accepted: info.accepted,
+      rejected: info.rejected,
+      response: info.response,
+      messageId: info.messageId,
+    });
+
     res.json({ success: true });
   } catch (error: any) {
-    console.error("Contact mail error:", error);
+    console.error("Contact mail error:", {
+      code: error.code,
+      command: error.command,
+      response: error.response,
+      responseCode: error.responseCode,
+      message: error.message,
+    });
     res.status(500).json({ error: "E-Mail konnte nicht gesendet werden." });
   }
 });
