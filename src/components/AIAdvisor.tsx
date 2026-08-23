@@ -108,15 +108,15 @@ export default function AIAdvisor() {
   return (
     <div className="flex flex-col h-[580px] bg-white rounded-xl shadow-xl overflow-hidden border border-neutral-200">
       {/* Top Banner / Card Title */}
-      <div className="flex items-center justify-between px-6 py-4 bg-neutral-900 text-white">
+      <div className="flex items-center justify-between px-6 py-4 bg-[#101d33] text-white">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-500 text-neutral-950 shadow-inner">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-[#1c2e4a] shadow-inner">
             <Bot className="h-5.5 w-5.5" />
           </div>
           <div>
             <div className="flex items-center gap-2">
               <h4 className="font-bold text-sm tracking-wide">IHR KI-ASSISTENT</h4>
-              <span className="inline-flex items-center gap-1 text-[10px] bg-amber-500/20 text-amber-300 font-bold px-1.5 py-0.5 rounded-full border border-amber-500/30">
+              <span className="inline-flex items-center gap-1 text-[10px] bg-brand/20 text-brand-soft font-bold px-1.5 py-0.5 rounded-full border border-brand/30">
                 <Sparkles className="h-2.5 w-2.5" /> Live
               </span>
             </div>
@@ -126,7 +126,7 @@ export default function AIAdvisor() {
         <button
           onClick={(e) => { e.preventDefault(); handleResetChat(); }}
           title="Chat zurücksetzen"
-          className="p-1.5 rounded-lg hover:bg-neutral-800 text-neutral-400 hover:text-white transition"
+          className="p-1.5 rounded-lg hover:bg-[#1c2e4a] text-neutral-400 hover:text-white transition"
         >
           <RefreshCw className="h-4 w-4" />
         </button>
@@ -147,8 +147,8 @@ export default function AIAdvisor() {
               <div
                 className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border shadow-sm ${
                   msg.role === "user"
-                    ? "bg-neutral-900 border-neutral-800 text-white"
-                    : "bg-[#F59E0B] border-[#D97706] text-white"
+                    ? "bg-[#101d33] border-neutral-800 text-white"
+                    : "bg-[#d42027] border-[#a8161c] text-white"
                 }`}
               >
                 {msg.role === "user" ? (
@@ -161,8 +161,8 @@ export default function AIAdvisor() {
               <div
                 className={`rounded-xl px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap ${
                   msg.role === "user"
-                    ? "bg-neutral-900 text-white shadow-md rounded-tr-none"
-                    : "bg-white text-neutral-800 border border-neutral-200 shadow-sm rounded-tl-none font-normal"
+                    ? "bg-[#101d33] text-white shadow-md rounded-tr-none"
+                    : "bg-white text-[#1c2e4a] border border-neutral-200 shadow-sm rounded-tl-none font-normal"
                 }`}
               >
                 {msg.content}
@@ -174,7 +174,7 @@ export default function AIAdvisor() {
         {isLoading && (
           <div className="flex justify-start">
             <div className="flex gap-2.5 items-center max-w-[85%]">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-200 text-neutral-500 border border-neutral-300">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-200 text-[#1c2e4a] border border-neutral-300">
                 <Bot className="h-4 w-4 animate-bounce" />
               </div>
               <div className="bg-white border border-neutral-200 rounded-xl rounded-tl-none px-4 py-3 text-neutral-400 font-medium text-xs flex items-center gap-2 shadow-sm">
@@ -206,7 +206,7 @@ export default function AIAdvisor() {
       {/* Quick click helper buttons */}
       {messages.length === 1 && !isLoading && (
         <div className="px-5 py-3 bg-neutral-100/50 border-t border-neutral-200">
-          <p className="text-xxs font-extrabold text-neutral-500 uppercase tracking-wider mb-2 flex items-center gap-1">
+          <p className="text-xxs font-extrabold text-[#1c2e4a] uppercase tracking-wider mb-2 flex items-center gap-1">
             <HelpCircle className="h-3.5 w-3.5" /> Häufig gestellte Fragen für Arbeitgeber:
           </p>
           <div className="grid grid-cols-2 gap-2">
@@ -214,7 +214,7 @@ export default function AIAdvisor() {
               <button
                 key={q}
                 onClick={(e) => { e.preventDefault(); handleSendMessage(q); }}
-                className="text-left text-xs bg-white hover:bg-neutral-900 hover:text-white border border-neutral-200 hover:border-neutral-900 rounded-lg p-2.5 transition font-medium text-neutral-700 truncate shadow-xs"
+                className="text-left text-xs bg-white hover:bg-[#1c2e4a] hover:text-white border border-neutral-200 hover:border-neutral-900 rounded-lg p-2.5 transition font-medium text-[#1c2e4a] truncate shadow-xs"
               >
                 {q}
               </button>
@@ -242,7 +242,7 @@ export default function AIAdvisor() {
         <button
           onClick={(e) => { e.preventDefault(); handleSendMessage(inputMessage); }}
           disabled={!inputMessage.trim() || isLoading}
-          className="flex items-center justify-center h-10 w-10 shrink-0 bg-neutral-950 hover:bg-neutral-800 text-white rounded-lg transition disabled:bg-neutral-200 disabled:text-neutral-400"
+          className="flex items-center justify-center h-10 w-10 shrink-0 bg-[#101d33] hover:bg-[#1c2e4a] text-white rounded-lg transition disabled:bg-neutral-200 disabled:text-neutral-400"
         >
           <Send className="h-4.5 w-4.5" />
         </button>

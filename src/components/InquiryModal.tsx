@@ -213,7 +213,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
       <div 
-        className="fixed inset-0 bg-neutral-900/80 backdrop-blur-sm"
+        className="fixed inset-0 bg-[#101d33]/80 backdrop-blur-sm"
         onClick={onClose}
       />
 
@@ -228,16 +228,16 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
           {/* Header */}
           <div className="flex items-center justify-between border-b border-neutral-100 bg-neutral-50 px-6 py-4">
             <div>
-              <h3 className="text-lg font-semibold text-black">
+              <h3 className="text-lg font-semibold text-[#1c2e4a]">
                 Unverbindliche Personalanfrage
               </h3>
-              <p className="text-xs text-neutral-500">
+              <p className="text-xs text-[#1c2e4a]">
                 ITW EduLab GmbH • In wenigen Schritten zu Ihrem Wunschpersonal
               </p>
             </div>
             <button
               onClick={onClose}
-              className="rounded-full p-1.5 text-neutral-400 hover:bg-neutral-200 hover:text-neutral-600 transition"
+              className="rounded-full p-1.5 text-neutral-400 hover:bg-neutral-200 hover:text-[#1c2e4a] transition"
             >
               <X className="h-5 w-5" />
             </button>
@@ -249,15 +249,15 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
               <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
                 <Check className="h-7 w-7" />
               </div>
-              <h4 className="text-xl font-bold text-black mb-2">
+              <h4 className="text-xl font-bold text-[#1c2e4a] mb-2">
                 Anfrage erfolgreich übermittelt!
               </h4>
-              <p className="text-sm text-neutral-600 mb-6 max-w-sm mx-auto">
+              <p className="text-sm text-[#1c2e4a] mb-6 max-w-sm mx-auto">
                 Vielen Dank für Ihr Vertrauen in ITW EduLab. Wir haben Ihre Bedarfsdaten erhalten und einer unserer Berater wird Sie innerhalb von 24 Stunden kontaktieren.
               </p>
               
-              <div className="mb-6 rounded-lg bg-neutral-50 p-4 text-left border border-neutral-100 text-xs text-neutral-600">
-                <div className="font-semibold text-neutral-700 mb-2">Ihre angegebenen Daten:</div>
+              <div className="mb-6 rounded-lg bg-neutral-50 p-4 text-left border border-neutral-100 text-xs text-[#1c2e4a]">
+                <div className="font-semibold text-[#1c2e4a] mb-2">Ihre angegebenen Daten:</div>
                 <div><strong>Unternehmen:</strong> {formData.companyName}</div>
                 <div><strong>Bereich:</strong> {formData.sector}</div>
                 <div><strong>Bedarf:</strong> {formData.count} Fachkräfte</div>
@@ -266,7 +266,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
 
               <button
                 onClick={handleReset}
-                className="w-full rounded-lg bg-neutral-900 py-3 text-sm font-semibold text-white hover:bg-neutral-800 transition"
+                className="w-full rounded-lg bg-[#101d33] py-3 text-sm font-semibold text-white hover:bg-[#1c2e4a] transition"
               >
                 Schließen
               </button>
@@ -276,13 +276,13 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
             {/* // <form noValidate onSubmit={handleSubmit} className="p-6"> */}
               {/* Progress Indicator */}
               <div className="flex items-center justify-between mb-6 px-1">
-                <span className="text-xs font-medium text-neutral-500">
+                <span className="text-xs font-medium text-[#1c2e4a]">
                   Schritt {step} von 3
                 </span>
                 <div className="flex gap-1">
-                  <div className={`h-1.5 w-10 rounded-full transition-colors ${step >= 1 ? "bg-neutral-800" : "bg-neutral-200"}`} />
-                  <div className={`h-1.5 w-10 rounded-full transition-colors ${step >= 2 ? "bg-neutral-800" : "bg-neutral-200"}`} />
-                  <div className={`h-1.5 w-10 rounded-full transition-colors ${step >= 3 ? "bg-neutral-800" : "bg-neutral-200"}`} />
+                  <div className={`h-1.5 w-10 rounded-full transition-colors ${step >= 1 ? "bg-[#1c2e4a]" : "bg-neutral-200"}`} />
+                  <div className={`h-1.5 w-10 rounded-full transition-colors ${step >= 2 ? "bg-[#1c2e4a]" : "bg-neutral-200"}`} />
+                  <div className={`h-1.5 w-10 rounded-full transition-colors ${step >= 3 ? "bg-[#1c2e4a]" : "bg-neutral-200"}`} />
                 </div>
               </div>
 
@@ -290,7 +290,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
               {step === 1 && (
                 <div className="space-y-5">
                   <div>
-                    <label className="block text-sm font-bold text-neutral-700 mb-3">
+                    <label className="block text-sm font-bold text-[#1c2e4a] mb-3">
                       Für welchen Fachbereich suchen Sie Personal? <span className="text-red-500">*</span>
                     </label>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -312,7 +312,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
                               : "border-neutral-200 hover:border-neutral-400 hover:bg-neutral-50/30"
                           }`}
                         >
-                          <span className="font-semibold text-neutral-800 text-sm">{item.label}</span>
+                          <span className="font-semibold text-[#1c2e4a] text-sm">{item.label}</span>
                           <span className="text-neutral-400 text-xs mt-1">{item.info}</span>
                         </button>
                       ))}
@@ -320,7 +320,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
                   </div>
 
                   <div>
-                    <label className="block text-sm font-bold text-neutral-700 mb-2">
+                    <label className="block text-sm font-bold text-[#1c2e4a] mb-2">
                       Wie viele Arbeitskräfte / Auszubildende benötigen Sie etwa?
                     </label>
                     <select
@@ -340,7 +340,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
                     <button
                       type="button"
                       onClick={nextStep}
-                      className="flex items-center gap-2 rounded-lg bg-neutral-950 px-5 py-2.5 text-sm font-semibold text-white hover:bg-neutral-800 transition"
+                      className="flex items-center gap-2 rounded-lg bg-[#101d33] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#1c2e4a] transition"
                     >
                       Weiter <ArrowRight className="h-4 w-4" />
                     </button>
@@ -352,7 +352,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
               {step === 2 && (
                 <div className="space-y-5">
                   <div>
-                    <label className="block text-sm font-bold text-neutral-700 mb-3">
+                    <label className="block text-sm font-bold text-[#1c2e4a] mb-3">
                       Über welches Deutsch-Sprachniveau sollten die Kandidaten verfügen?
                     </label>
                     <div className="grid grid-cols-3 gap-2.5">
@@ -371,7 +371,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
                               : "border-neutral-200 hover:border-neutral-400"
                           }`}
                         >
-                          <div className="font-semibold text-neutral-800 text-sm">{lvl.label}</div>
+                          <div className="font-semibold text-[#1c2e4a] text-sm">{lvl.label}</div>
                           <div className="text-neutral-400 text-xxs mt-0.5">{lvl.description}</div>
                         </button>
                       ))}
@@ -379,7 +379,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
                   </div>
 
                   <div>
-                    <label className="block text-sm font-bold text-neutral-700 mb-2">
+                    <label className="block text-sm font-bold text-[#1c2e4a] mb-2">
                       Spezifische Anforderungen oder Anmerkungen (optional):
                     </label>
                     <textarea
@@ -396,14 +396,14 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
                     <button
                       type="button"
                       onClick={prevStep}
-                      className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-4 py-2.5 text-sm font-semibold text-neutral-700 hover:bg-neutral-50 transition"
+                      className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#1c2e4a] hover:bg-neutral-50 transition"
                     >
                       <ArrowLeft className="h-4 w-4" /> Zurück
                     </button>
                     <button
                       type="button"
                       onClick={nextStep}
-                      className="flex items-center gap-2 rounded-lg bg-neutral-950 px-5 py-2.5 text-sm font-semibold text-white hover:bg-neutral-800 transition"
+                      className="flex items-center gap-2 rounded-lg bg-[#101d33] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#1c2e4a] transition"
                     >
                       Weiter <ArrowRight className="h-4 w-4" />
                     </button>
@@ -415,7 +415,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
               {step === 3 && (
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-xs font-bold text-neutral-600 uppercase tracking-wider mb-1">
+                    <label className="block text-xs font-bold text-[#1c2e4a] uppercase tracking-wider mb-1">
                       Name des Unternehmens <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -430,7 +430,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-neutral-600 uppercase tracking-wider mb-1">
+                    <label className="block text-xs font-bold text-[#1c2e4a] uppercase tracking-wider mb-1">
                       Ansprechpartner / Ansprechpartnerin <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -446,7 +446,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
 
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-bold text-neutral-600 uppercase tracking-wider mb-1">
+                      <label className="block text-xs font-bold text-[#1c2e4a] uppercase tracking-wider mb-1">
                         E-Mail-Adresse <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -460,7 +460,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-neutral-600 uppercase tracking-wider mb-1">
+                      <label className="block text-xs font-bold text-[#1c2e4a] uppercase tracking-wider mb-1">
                         Telefonnummer <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -475,7 +475,7 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
                     </div>
                   </div>
 
-                  <div className="bg-neutral-50 rounded-lg p-3 text-xxs text-neutral-500 border border-neutral-150 leading-relaxed">
+                  <div className="bg-neutral-50 rounded-lg p-3 text-xxs text-[#1c2e4a] border border-neutral-150 leading-relaxed">
                     Datenschutz: Ihre personenbezogenen Daten werden im Einklang mit der DS-GVO ausschließlich zur Beantwortung dieser Anfrage verarbeitet.
                   </div>
 
@@ -489,14 +489,14 @@ const [formData, setFormData] = useState<Inquiry>(initialFormData);
                     <button
                       type="button"
                       onClick={prevStep}
-                      className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-4 py-2.5 text-sm font-semibold text-neutral-700 hover:bg-neutral-50 transition"
+                      className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#1c2e4a] hover:bg-neutral-50 transition"
                     >
                       <ArrowLeft className="h-4 w-4" /> Zurück
                     </button>
                     <button
                       type="submit"
                       disabled={loading}
-                      className="flex items-center gap-2 rounded-lg bg-neutral-950 px-5 py-2.5 text-sm font-bold text-white hover:bg-neutral-800 transition disabled:opacity-50"
+                      className="flex items-center gap-2 rounded-lg bg-[#101d33] px-5 py-2.5 text-sm font-bold text-white hover:bg-[#1c2e4a] transition disabled:opacity-50"
                     >
                       {loading ? "Übermittlung..." : (
                         <>

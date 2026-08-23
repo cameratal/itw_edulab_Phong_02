@@ -15,7 +15,7 @@ export default function Footer({
   };
 
   return (
-    <footer className="bg-black text-neutral-300">
+    <footer className="bg-[#0b1526] text-neutral-300">
       <div className="mx-auto w-full max-w-7xl px-4 pt-8 pb-2 sm:px-6 lg:px-8">
         {/* Main grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-white/10 items-start">
@@ -72,7 +72,7 @@ export default function Footer({
         </div>
 
         {/* Bottom section */}
-        <div className="pt-4 text-xs text-neutral-500 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-4 text-xs text-neutral-400 flex flex-col md:flex-row justify-between items-center gap-4">
           <div>
             © 2026 ITW EduLab GmbH. Alle Rechte vorbehalten.
           </div>

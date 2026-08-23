@@ -13,6 +13,7 @@ export default function Navigation({ activeTab, onNavigate, onOpenInquiry }: Nav
   const navItems = [
     { id: "home", label: "Home" },
     { id: "about", label: "Über uns" },
+    { id: "aktivitat", label: "Aktivitäten" },
     { id: "leistungen", label: "Leistungen" },
     { id: "how-it-works", label: "Zusammenarbeit" },
     // { id: "ai-chat", label: "KI-Assistent" },
@@ -53,13 +54,13 @@ export default function Navigation({ activeTab, onNavigate, onOpenInquiry }: Nav
               onClick={() => handleNavItemClick(item.id)}
               className={`text-sm font-medium tracking-wide transition relative py-2 ${
                 activeTab === item.id
-                  ? "text-neutral-900 font-bold"
-                  : "text-neutral-500 hover:text-neutral-950"
+                  ? "text-[#1c2e4a] font-bold"
+                  : "text-[#1c2e4a] hover:text-[#1c2e4a]"
               }`}
             >
               {item.label}
               {activeTab === item.id && (
-                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#F59E0B] rounded-full" />
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#d42027] rounded-full" />
               )}
             </button>
           ))}
@@ -69,7 +70,7 @@ export default function Navigation({ activeTab, onNavigate, onOpenInquiry }: Nav
         <div className="hidden md:flex items-center gap-4">
           <button
             onClick={() => onNavigate("kontaktformular")}
-            className="group flex items-center gap-1.5 rounded-lg bg-neutral-950 px-4 py-2.5 text-xs font-extrabold tracking-wider uppercase text-white hover:bg-neutral-800 transition"
+            className="group flex items-center gap-1.5 rounded-lg bg-[#101d33] px-4 py-2.5 text-xs font-extrabold tracking-wider uppercase text-white hover:bg-[#1c2e4a] transition"
           >
             Kontaktformular
             <ArrowUpRight className="h-3.5 w-3.5 text-neutral-400 group-hover:text-white transition-colors" />
@@ -80,7 +81,7 @@ export default function Navigation({ activeTab, onNavigate, onOpenInquiry }: Nav
         <div className="flex md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="rounded-lg p-2 text-neutral-500 hover:bg-neutral-100 focus:outline-none"
+            className="rounded-lg p-2 text-[#1c2e4a] hover:bg-neutral-100 focus:outline-none"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -97,8 +98,8 @@ export default function Navigation({ activeTab, onNavigate, onOpenInquiry }: Nav
                 onClick={() => handleNavItemClick(item.id)}
                 className={`block w-full text-left rounded-lg p-3 text-sm font-semibold transition ${
                   activeTab === item.id
-                    ? "bg-neutral-50 text-neutral-950 font-extrabold border-l-4 border-[#F59E0B]"
-                    : "text-neutral-500 hover:bg-neutral-50 hover:text-neutral-950"
+                    ? "bg-neutral-50 text-[#1c2e4a] font-extrabold border-l-4 border-[#d42027]"
+                    : "text-[#1c2e4a] hover:bg-neutral-50 hover:text-[#1c2e4a]"
                 }`}
               >
                 {item.label}
@@ -107,13 +108,13 @@ export default function Navigation({ activeTab, onNavigate, onOpenInquiry }: Nav
             <div className="pt-4 border-t border-neutral-100 flex flex-col gap-2">
               <button
                 onClick={() => handleNavItemClick("ai-chat")}
-                className="flex items-center justify-center gap-2 rounded-lg border border-neutral-200 p-3 text-sm font-bold text-neutral-700 hover:bg-neutral-50 transition"
+                className="flex items-center justify-center gap-2 rounded-lg border border-neutral-200 p-3 text-sm font-bold text-[#1c2e4a] hover:bg-neutral-50 transition"
               >
-                <MessageSquareCode className="h-4.5 w-4.5 text-amber-500" /> AI-Fachkräfteberater
+                <MessageSquareCode className="h-4.5 w-4.5 text-brand" /> AI-Fachkräfteberater
               </button>
               <button
                 onClick={onOpenInquiry}
-                className="w-full text-center rounded-lg bg-neutral-950 p-3 text-sm font-extrabold tracking-wider uppercase text-white hover:bg-neutral-800 transition"
+                className="w-full text-center rounded-lg bg-[#101d33] p-3 text-sm font-extrabold tracking-wider uppercase text-white hover:bg-[#1c2e4a] transition"
               >
                 Jetzt anfragen
               </button>

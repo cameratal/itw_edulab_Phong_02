@@ -88,62 +88,62 @@ export default function Kontaktformular({ isSection = false }) {
   return (
     <div className={`${isSection ? "" : "py-24 bg-white min-h-screen"}`}>
       <div className={`mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-8 ${isSection ? "py-12" : "py-0"}`}>
-        <h1 className="text-4xl font-extrabold text-black sm:text-5xl tracking-tight uppercase mb-8 text-left">Kontaktformular</h1>
+        <h1 className="text-4xl font-extrabold text-[#101d33] sm:text-5xl tracking-tight uppercase mb-8 text-left">Kontaktformular</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <form onSubmit={handleSubmit} className="space-y-6 text-neutral-600 font-light leading-relaxed">
+          <form onSubmit={handleSubmit} className="space-y-6 text-[#1c2e4a] font-light leading-relaxed">
             <section>
-              <h2 className="text-xl font-extrabold text-[#1c2e4a] mb-4 tracking-tight uppercase">Senden Sie uns eine Nachricht</h2>
+              <h2 className="text-xl font-extrabold text-[#101d33] mb-4 tracking-tight uppercase">Senden Sie uns eine Nachricht</h2>
               <div>
-                <label className="block text-sm font-medium text-neutral-700">Name</label>
+                <label className="block text-sm font-medium text-[#1c2e4a]">Name</label>
                 <input 
                   type="text" 
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 border p-2"
+                  className="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-brand focus:ring-brand border p-2"
                 />
-                {errors.name && <p className="text-orange-500 text-sm mt-1">{errors.name}</p>}
+                {errors.name && <p className="text-brand text-sm mt-1">{errors.name}</p>}
               </div>
               <div className="mt-4">
-                <label className="block text-sm font-medium text-neutral-700">E-Mail</label>
+                <label className="block text-sm font-medium text-[#1c2e4a]">E-Mail</label>
                 <input 
                   type="email" 
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 border p-2"
+                  className="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-brand focus:ring-brand border p-2"
                 />
-                {errors.email && <p className="text-orange-500 text-sm mt-1">{errors.email}</p>}
+                {errors.email && <p className="text-brand text-sm mt-1">{errors.email}</p>}
               </div>
               <div className="mt-4">
-                <label className="block text-sm font-medium text-neutral-700">Telefonnummer</label>
+                <label className="block text-sm font-medium text-[#1c2e4a]">Telefonnummer</label>
                 <input 
                   type="text" 
                   value={formData.phone}
                   onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  className="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 border p-2"
+                  className="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-brand focus:ring-brand border p-2"
                 />
-                {errors.phone && <p className="text-orange-500 text-sm mt-1">{errors.phone}</p>}
+                {errors.phone && <p className="text-brand text-sm mt-1">{errors.phone}</p>}
               </div>
                <div className="mt-4">
-                <label className="block text-sm font-medium text-neutral-700">Betreff</label>
+                <label className="block text-sm font-medium text-[#1c2e4a]">Betreff</label>
                 <input 
                   type="text" 
                   value={formData.betreff}
                   onChange={(e) => setFormData({...formData, betreff: e.target.value})}
-                  className="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 border p-2"
+                  className="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-brand focus:ring-brand border p-2"
                 />
               </div>
               <div className="mt-4">
-                <label className="block text-sm font-medium text-neutral-700">Nachricht</label>
+                <label className="block text-sm font-medium text-[#1c2e4a]">Nachricht</label>
                 <textarea 
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  className="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-amber-500 focus:ring-amber-500 border p-2"
+                  className="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-brand focus:ring-brand border p-2"
                   rows={4}
                 />
-                {errors.message && <p className="text-orange-500 text-sm mt-1">{errors.message}</p>}
+                {errors.message && <p className="text-brand text-sm mt-1">{errors.message}</p>}
               </div>
-              <button type="submit" className="mt-6 flex items-center justify-center gap-2 rounded-xl bg-neutral-950 px-7 py-4 text-xs font-black tracking-wider uppercase text-white hover:bg-neutral-800 transition-all cursor-pointer">
+              <button type="submit" className="mt-6 flex items-center justify-center gap-2 rounded-xl bg-[#101d33] px-7 py-4 text-xs font-black tracking-wider uppercase text-white hover:bg-[#1c2e4a] transition-all cursor-pointer">
                 Absenden
               </button>
               
@@ -157,8 +157,8 @@ export default function Kontaktformular({ isSection = false }) {
           
           <div className="hidden md:block">
             <img 
-              src="/vietnamese_girl_smiling_02.png" 
-              alt="Vietnamese girl smiling friendly" 
+              src="/Kontaktformular.png" 
+              alt="ITW EduLab Beraterin" 
               className="rounded-2xl shadow-xl object-cover w-full h-full aspect-[4/5]" 
               referrerPolicy="no-referrer"
             />

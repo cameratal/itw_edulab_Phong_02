@@ -36,7 +36,25 @@ function collect(dir, found = []) {
 
 // Anything that cannot appear in a class name, or that would break out of the
 // `@source inline("...")` string, disqualifies a word.
-const ILLEGAL = /["`\\{};]/;
+// Dấu phẩy và ngoặc KHÔNG cân là chí mạng. Tailwind gặp một mẩu như
+// `linear-gradient(140deg,` trong @source inline(...) là bỏ luôn CẢ DÒNG đó,
+// kéo theo mọi lớp hợp lệ đứng cùng dòng. Lỗi này đã làm bay sạch nhóm
+// max-w-* nên trang mất canh giữa — nhìn như hỏng bố cục, rất khó truy ra.
+const ILLEGAL = /["`\\{};,]/;
+
+/** Ngoặc phải đóng mở cân nhau, không thì cả dòng @source inline hỏng theo. */
+function canBang(word) {
+  let tron = 0;
+  let vuong = 0;
+  for (const c of word) {
+    if (c === "(") tron++;
+    else if (c === ")") tron--;
+    else if (c === "[") vuong++;
+    else if (c === "]") vuong--;
+    if (tron < 0 || vuong < 0) return false;
+  }
+  return tron === 0 && vuong === 0;
+}
 const CANDIDATE = /^[a-zA-Z0-9@!-][a-zA-Z0-9@!_:./#%()&,+*<>~=$[\]-]*$/;
 
 const files = [join(ROOT, "index.html"), ...collect(join(ROOT, "src"))];
@@ -51,6 +69,7 @@ for (const file of files) {
     for (const word of body.split(/\s+/)) {
       if (!word || word.length > 120) continue;
       if (ILLEGAL.test(word) || !CANDIDATE.test(word)) continue;
+      if (!canBang(word)) continue;
       candidates.add(word);
     }
   }

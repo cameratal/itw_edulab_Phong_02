@@ -7,6 +7,8 @@ import CookieRichtline from "./components/CookieRichtline";
 import Kontaktformular from "./components/Kontaktformular";
 import InquiryModal from "./components/InquiryModal";
 import AIAdvisor from "./components/AIAdvisor";
+import HeroSlideshow from "./components/HeroSlideshow";
+import Aktivitaet from "./components/Aktivitaet";
 // @ts-ignore
 import heroBusinesswoman from "./assets/images/itw-edulab_hero_businesswoman.png";
 import { 
@@ -318,7 +320,7 @@ export default function App() {
       description: "Über eine dêtallierte Anfrage ermitteln wir Ihren genauen Personalbedarf.",
       detailText: "Wir besprechen mit Ihnen die fachlichen Qualifikationen, deutschen Sprachfortschritte (A2, B1, B2) sowie das tarifliche Gehalt und erstellen ein klares Anforderungsprofil.",
       icon: ChecklistDrawingIcon,
-      color: "bg-[#111111]",
+      color: "bg-[#101d33]",
     },
     {
       id: 2,
@@ -329,7 +331,7 @@ export default function App() {
       description: "Wir erstellen eine passgenaue Auswahl qualifizierter Kandidat:innen für Sie.",
       detailText: "Aus unserem weitreichenden Netzwerk von über 20 Partnerakademien und Berufsschulen in Vietnam präsentieren wir Ihnen aussagekräftige Profile (Lebensläufe, Videos, Zeugnisse).",
       icon: SearchCandidatesIcon,
-      color: "bg-[#111111]",
+      color: "bg-[#101d33]",
     },
     {
       id: 3,
@@ -340,7 +342,7 @@ export default function App() {
       description: "Gemeinsam führen wir Eignungstests und Vorstellungsgespräche durch.",
       detailText: "Wir organisieren video-basierte Rekrutierungsgespräche und begleiten Sie bei theoretischen oder praktischen Eignungstests, um die fachliche Passung einwandfrei zu verifizieren.",
       icon: InterviewTableIcon,
-      color: "bg-[#111111]",
+      color: "bg-[#101d33]",
     },
     {
       id: 4,
@@ -351,7 +353,7 @@ export default function App() {
       description: "Wir unterstützen Sie vollumfänglich bei Visa, Aufenthaltstitel und Arbeitserlaubnis.",
       detailText: "ITW EduLab übernimmt das gesamte bürokratische Übertragungsverfahren (z. B. Beantragung der Gleichwertigkeit Ihres Berufsabschlusses in Deutschland, Erklärung zu Arbeitsverhältnissen).",
       icon: ContractSignatureIcon,
-      color: "bg-[#111111]",
+      color: "bg-[#101d33]",
     },
     {
       id: 5,
@@ -362,7 +364,7 @@ export default function App() {
       description: "Erfolgreiche Vermittlung und direkte Visaabwicklung für den neuen Mitarbeiter.",
       detailText: "Wir buchen die Interkontinentalflüge, bereiten den Kandidaten auf die Ankunft in Deutschland vor und steuern die Visa-Ausstellung mit der deutschen Botschaft in Hanoi / Generalskonsulat HCM.",
       icon: VisaPassportIcon,
-      color: "bg-[#111111]",
+      color: "bg-[#101d33]",
     },
     {
       id: 6,
@@ -373,12 +375,12 @@ export default function App() {
       description: "Die Fachkräfte nehmen ihre Tätigkeit auf. Integration ins Team gelingt mühelos.",
       detailText: "Unser Service geht weiter: Wir helfen bei Behördengängen, der Wohnungssuche, Krankenkassen-Anmeldung und begleiten den Integrationsprozess eng am Arbeitsplatz und im Alltag.",
       icon: Users,
-      color: "bg-[#111111]",
+      color: "bg-[#101d33]",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-[#FBFBFD] text-neutral-850 font-sans selection:bg-[#F59E0B]/20 selection:text-neutral-900">
+    <div className="min-h-screen bg-[#FBFBFD] text-[#1c2e4a] font-sans selection:bg-[#d42027]/20 selection:text-[#1c2e4a]">
       {/* Navigation Headers */}
       <Navigation 
         activeTab={activeTab} 
@@ -404,15 +406,15 @@ export default function App() {
               
               <h1 
                 onClick={() => setShowHeroDetails(!showHeroDetails)}
-                className="text-4xl font-extrabold tracking-tight text-black sm:text-5xl lg:text-6xl leading-[1.08] cursor-pointer hover:text-neutral-800 transition-all select-none group"
+                className="text-4xl font-extrabold tracking-tight text-[#101d33] sm:text-5xl lg:text-6xl leading-[1.08] cursor-pointer hover:text-[#24365f] transition-all select-none group"
               >
-                Ihr Partner für Ihren Bedarf an <span className="text-black group-hover:text-neutral-800 relative inline-block">Arbeitskräften<span className="absolute left-0 bottom-1 w-full h-1 bg-yellow-500 rounded" /></span>
+                Ihr Partner für Ihren Bedarf an <span className="relative inline-block">Arbeitskräften<span className="absolute left-0 bottom-1 w-full h-1 bg-brand rounded" /></span>
               </h1>
               
               <div className={`transition-all duration-[700ms] ease-in-out overflow-hidden ${
                 showHeroDetails ? 'opacity-100 max-h-[500px] mt-4 space-y-6' : 'opacity-0 max-h-0'
               }`}>
-                <p className="text-base text-neutral-600 sm:text-lg leading-relaxed max-w-3xl font-light">
+                <p className="text-base text-[#1c2e4a] sm:text-lg leading-relaxed max-w-3xl font-light">
                   ITW EduLab ist Ihr Partner für die Gewinnung von Fachkräften und Auszubildenden aus Vietnam. Wir unterstützen deutsche Unternehmen dabei, offene Stellen in personalintensiven und schwer zu besetzenden Bereichen strukturiert und verlässlich zu besetzen.
                 </p>
               </div>
@@ -421,33 +423,34 @@ export default function App() {
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <button
                   onClick={() => setIsInquiryOpen(true)}
-                  className="flex items-center justify-center gap-2 rounded-xl bg-neutral-950 px-7 py-4 text-xs font-black tracking-wider uppercase text-white hover:bg-neutral-800 shadow-lg shadow-neutral-950/15 ring-2 ring-transparent hover:ring-neutral-950 transition-all cursor-pointer"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-[#101d33] px-7 py-4 text-xs font-black tracking-wider uppercase text-white hover:bg-[#1c2e4a] shadow-lg shadow-neutral-950/15 ring-2 ring-transparent hover:ring-neutral-950 transition-all cursor-pointer"
                 >
                   Jetzt unverbindlich anfragen
                   <ArrowUpRight className="h-4.5 w-4.5 text-neutral-400 group-hover:text-white" />
                 </button>
+                {/* Nút KI-Assistent — ẩn theo yêu cầu.
+                    Nó trỏ tới #ai-chat, mà mục đó đã bị bỏ trống bên dưới (dòng ~755),
+                    nên bấm vào không đi đâu cả. Giữ nguyên mã để bật lại là gỡ dấu chú
+                    thích ra dùng ngay. */}
+                {/*
                 <a
                   href="#ai-chat"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-white border border-neutral-200 hover:border-neutral-900 px-7 py-4 text-xs font-extrabold text-neutral-800 transition"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-white border border-neutral-200 hover:border-neutral-900 px-7 py-4 text-xs font-extrabold text-[#1c2e4a] transition"
                 >
-                  <Sparkles className="h-4 w-4 text-amber-500 animate-pulse" /> KI-Assistent
+                  <Sparkles className="h-4 w-4 text-brand animate-pulse" /> KI-Assistent
                 </a>
+                */}
               </div>
             </div>
 
             {/* Right Column: Recruiter Consultation Image (Trang 1 illustration) */}
             <div className="lg:col-span-5 relative">
               <div className="relative mx-auto max-w-md overflow-hidden transition-transform duration-300 flex items-center justify-center aspect-[4/5]">
-                <img 
-                  src="/vietnamese_girl_smiling_02.png"
-                  alt="ITW EduLab Beraterin im Büro"
-                  className="w-full h-full object-cover rounded-2xl"
-                  referrerPolicy="no-referrer"
-                />
+                <HeroSlideshow />
               </div>
 
               {/* Decorative background shape */}
-              <div className="absolute -bottom-6 -right-6 -z-10 h-64 w-64 bg-amber-500/10 rounded-full blur-2xl" />
+              <div className="absolute -bottom-6 -right-6 -z-10 h-64 w-64 bg-brand/10 rounded-full blur-2xl" />
             </div>
 
           </div>
@@ -466,15 +469,15 @@ export default function App() {
             <div className="lg:col-span-6 relative">
               <div className="relative mx-auto max-w-lg space-y-6">
                 
-                {/* Dynamically renders photo representing Son Tran or Frank Deubler */}
-                <div className="aspect-[4/4] rounded-xl overflow-hidden bg-neutral-200 border border-neutral-150 relative">
+                {/* Dynamically renders photo representing Ngoc Nguyen or Frank Deubler */}
+                <div className="aspect-[4/4] rounded-xl overflow-hidden bg-neutral-200 relative">
                   {activeFounder === "son" ? (                    
                     <img 
                       key="son-img"
                       // src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800&h=600"
                       /**test */
                       src="/itw-edulab_direktor_02.png "
-                      alt="Son Tran - ITW EduLab Gründer & Geschäftsführer"
+                      alt="Ngoc Nguyen - ITW EduLab Gründer & Geschäftsführer"
                       className="h-full w-full object-cover transition-all duration-300"
                       referrerPolicy="no-referrer"
                     />                   
@@ -488,10 +491,10 @@ export default function App() {
                     />
                   )}
                   {/* Glowing Overlay banner showing the detail of the selected co-founder */}
-                  <div className="absolute inset-x-0 bottom-0 bg-neutral-950/70 p-4 text-white backdrop-blur-xs flex items-center justify-between">
+                  <div className="absolute inset-x-0 bottom-0 bg-[#101d33]/70 p-4 text-white backdrop-blur-xs flex items-center justify-between">
                     <div>
-                      <div className="text-xs font-black uppercase text-amber-500">
-                        {activeFounder === "son" ? "Son Tran" : "Prof. Dr. (UA) Frank Deubler"}
+                      <div className="text-xs font-black uppercase text-brand">
+                        {activeFounder === "son" ? "Ngoc Nguyen" : "Prof. Dr. (UA) Frank Deubler"}
                       </div>
                       <div className="text-[10px] text-neutral-300">
                         {activeFounder === "son" ? "Gründer & Geschäftsführer" : "Generalbevollmächtigter"}
@@ -509,14 +512,14 @@ export default function App() {
                     onClick={() => setActiveFounder("son")}
                     className={`text-center p-3 rounded-xl border transition-all duration-300 cursor-pointer select-none ${
                       activeFounder === "son"
-                        ? "bg-neutral-950 text-white border-neutral-950 shadow-md scale-[1.01]"
-                        : "bg-neutral-50 text-neutral-600 border-neutral-200 hover:bg-neutral-100 hover:text-neutral-900 animate-none"
+                        ? "bg-[#101d33] text-white border-neutral-950 shadow-md scale-[1.01]"
+                        : "bg-neutral-50 text-[#1c2e4a] border-neutral-200 hover:bg-neutral-100 hover:text-[#1c2e4a] animate-none"
                     }`}
                   >
-                    <h5 className={`font-extrabold text-xs transition-colors duration-300 ${activeFounder === "son" ? "text-[#F59E0B]" : "text-black"}`}>
-                      Son Tran
+                    <h5 className={`font-extrabold text-xs transition-colors duration-300 ${activeFounder === "son" ? "text-[#d42027]" : "text-[#1c2e4a]"}`}>
+                      Ngoc Nguyen
                     </h5>
-                    <p className={`text-[9px] uppercase tracking-wide mt-0.5 transition-colors duration-300 ${activeFounder === "son" ? "text-neutral-300" : "text-neutral-500"}`}>
+                    <p className={`text-[9px] uppercase tracking-wide mt-0.5 transition-colors duration-300 ${activeFounder === "son" ? "text-neutral-300" : "text-[#1c2e4a]"}`}>
                       Gründer &amp; Geschäftsführer
                     </p>
                   </div>
@@ -525,14 +528,14 @@ export default function App() {
                     onClick={() => setActiveFounder("frank")}
                     className={`text-center p-3 rounded-xl border transition-all duration-300 cursor-pointer select-none ${
                       activeFounder === "frank"
-                        ? "bg-neutral-950 text-white border-neutral-950 shadow-md scale-[1.01]"
-                        : "bg-neutral-50 text-neutral-600 border-neutral-200 hover:bg-neutral-100 hover:text-neutral-900 animate-none"
+                        ? "bg-[#101d33] text-white border-neutral-950 shadow-md scale-[1.01]"
+                        : "bg-neutral-50 text-[#1c2e4a] border-neutral-200 hover:bg-neutral-100 hover:text-[#1c2e4a] animate-none"
                     }`}
                   >
-                    <h5 className={`font-extrabold text-xs transition-colors duration-300 ${activeFounder === "frank" ? "text-[#F59E0B]" : "text-black"}`}>
+                    <h5 className={`font-extrabold text-xs transition-colors duration-300 ${activeFounder === "frank" ? "text-[#d42027]" : "text-[#1c2e4a]"}`}>
                       Prof. Dr. (UA) Frank Deubler
                     </h5>
-                    <p className={`text-[9px] uppercase tracking-wide mt-0.5 transition-colors duration-300 ${activeFounder === "frank" ? "text-neutral-300" : "text-neutral-500"}`}>
+                    <p className={`text-[9px] uppercase tracking-wide mt-0.5 transition-colors duration-300 ${activeFounder === "frank" ? "text-neutral-300" : "text-[#1c2e4a]"}`}>
                       Generalbevollmächtigter
                     </p>
                   </div>
@@ -544,24 +547,24 @@ export default function App() {
 
             {/* Right Col: About us texts (exactly as in the prompt for Trang 3) */}
             <div className="lg:col-span-6 text-left space-y-6">
-              <h3 className="text-4xl font-extrabold text-black sm:text-5xl tracking-tight uppercase">
+              <h3 className="text-4xl font-extrabold text-[#101d33] sm:text-5xl tracking-tight uppercase">
                 Wer wir sind
               </h3>
-              <p className="text-xl font-extrabold text-[#1c2e4a] mb-4 tracking-tight uppercase">
+              <p className="text-xl font-extrabold text-[#101d33] mb-4 tracking-tight uppercase">
                 ITW EDULAB NETZWERK • HANOI • HO CHI MINH CITY • BERLIN
               </p>
               
-              <div className="space-y-4 text-neutral-600 font-light text-base leading-relaxed">
+              <div className="space-y-4 text-[#1c2e4a] font-light text-base leading-relaxed">
                 {activeFounder === "son" ? (
                   <>
                     <p>
-                      <strong className="text-neutral-950 font-semibold">Son Tran</strong>, Gründer von ITW EduLab, ist seit 2012 ein verlässlicher Kooperationspartner von Berufsschulen, Ausbildungswerkstätten und Universitäten in Vietnam – mit Schwerpunkten in Hanoi und Ho Chi Minh Stadt.
+                      <strong className="text-[#1c2e4a] font-semibold">Ngoc Nguyen</strong>, Gründer von ITW EduLab, ist seit 2012 ein verlässlicher Kooperationspartner von Berufsschulen, Ausbildungswerkstätten und Universitäten in Vietnam – mit Schwerpunkten in Hanoi und Ho Chi Minh Stadt.
                     </p>
                     <p>
-                      Unser Netzwerk umfasst derzeit <strong className="text-neutral-950 font-semibold">über 20 etablierte Partnerinstitutionen</strong> und bietet Ihnen eine breite Auswahl an qualifizierten Fachkräften aus verschiedenen Berufszweigen, unter anderem im Handwerk, in der Pflege und im Gastgewerbe.
+                      Unser Netzwerk umfasst derzeit <strong className="text-[#1c2e4a] font-semibold">über 20 etablierte Partnerinstitutionen</strong> und bietet Ihnen eine breite Auswahl an qualifizierten Fachkräften aus verschiedenen Berufszweigen, unter anderem im Handwerk, in der Pflege und im Gastgewerbe.
                     </p>
                     <p>
-                      Mit mehr als <strong className="text-neutral-950 font-semibold">15 Jahren Erfahrung</strong> in der internationalen Arbeitskräftebeschaffung übernehmen wir für Sie den gesamten Prozess – von der Vorauswahl über den Vertragsabschluss bis zur vollständigen Abwicklung des Visumsverfahrens. Alles aus einer Hand.
+                      Mit mehr als <strong className="text-[#1c2e4a] font-semibold">15 Jahren Erfahrung</strong> in der internationalen Arbeitskräftebeschaffung übernehmen wir für Sie den gesamten Prozess – von der Vorauswahl über den Vertragsabschluss bis zur vollständigen Abwicklung des Visumsverfahrens. Alles aus einer Hand.
                     </p>
                      <p>
                       Eine erfolgreiche Integration beginnt bereits im Herkunftsland. Deshalb bereiten wir unsere Kandidatinnen und Kandidaten intensiv auf ihren Einsatz in Deutschland vor. Neben berufsbezogenen Deutschkenntnissen vermitteln wir auch interkulturelle Kompetenzen sowie grundlegendes Wissen über das deutsche Arbeitsleben. Dadurch können sich die Fachkräfte schneller in ihrem neuen Arbeitsumfeld zurechtfinden und langfristig erfolgreich in Ihr Unternehmen integrieren.
@@ -570,7 +573,7 @@ export default function App() {
                 ) : (
                   <>
                     <p>
-                      <strong className="text-neutral-950 font-semibold">Prof. Dr. (UA) Frank Deubler</strong> unterstützt Sie mit seiner langjährigen Expertise aus Forschung und Lehre bei einer strukturierten Analyse Ihres Personalbedarfs. So finden wir gezielt die passenden Kandidat:innen für Ihr Unternehmen.
+                      <strong className="text-[#1c2e4a] font-semibold">Prof. Dr. (UA) Frank Deubler</strong> unterstützt Sie mit seiner langjährigen Expertise aus Forschung und Lehre bei einer strukturierten Analyse Ihres Personalbedarfs. So finden wir gezielt die passenden Kandidat:innen für Ihr Unternehmen.
                     </p>
                     <p>
                       Ein eigens entwickelter Eignungstest ermöglicht eine schnelle und präzise Bewertung der Profile. Dadurch können Sie qualifizierte Fachkräfte aus dem Ausland komfortabel von Deutschland aus auswählen.
@@ -591,16 +594,18 @@ export default function App() {
         </div>
       </section>
 
+      <Aktivitaet />
+
       {/* Recruitment Process Steps (Trang 2) */}
       <section 
         id="leistungen" 
         className="py-24 bg-white border-b border-neutral-200 scroll-mt-10"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-extrabold text-black sm:text-5xl tracking-tight uppercase mb-8 text-center">
+          <h2 className="text-4xl font-extrabold text-[#101d33] sm:text-5xl tracking-tight uppercase mb-8 text-center">
             Unsere Leistungen
           </h2>
-          <p className="text-base text-neutral-600 font-light leading-relaxed max-w-3xl mx-auto text-center mb-16">
+          <p className="text-base text-[#1c2e4a] font-light leading-relaxed max-w-3xl mx-auto text-center mb-16">
             Wir begleiten Unternehmen bei der Gewinnung qualifizierter Fachkräfte und Auszubildender aus Vietnam – zuverlässig, transparent und aus einer Hand.
           </p>
           
@@ -637,12 +642,12 @@ export default function App() {
                 icon: UserCheck
               }
             ].map((service, index) => (
-              <div key={index} className="bg-neutral-50 p-8 rounded-2xl border border-neutral-100 hover:border-amber-500/30 transition-all duration-300">
-                <service.icon className="h-10 w-10 text-amber-500 mb-6" />
-                <h3 className="text-xl font-extrabold text-[#1c2e4a] mb-4 tracking-tight uppercase">
+              <div key={index} className="bg-neutral-50 p-8 rounded-2xl border border-neutral-100 hover:border-brand/30 transition-all duration-300">
+                <service.icon className="h-10 w-10 text-brand mb-6" />
+                <h3 className="text-xl font-extrabold text-[#101d33] mb-4 tracking-tight uppercase">
                   {service.title}
                 </h3>
-                <p className="text-base text-neutral-600 font-light leading-relaxed">
+                <p className="text-base text-[#1c2e4a] font-light leading-relaxed">
                   {service.text}
                 </p>
               </div>
@@ -652,7 +657,7 @@ export default function App() {
           <div className="text-center mt-16">
             <button
               onClick={() => setIsInquiryOpen(true)}
-              className="flex items-center justify-center gap-2 rounded-xl bg-neutral-950 px-7 py-4 text-xs font-black tracking-wider uppercase text-white hover:bg-neutral-800 shadow-lg shadow-neutral-950/15 ring-2 ring-transparent hover:ring-neutral-950 transition-all cursor-pointer mx-auto"
+              className="flex items-center justify-center gap-2 rounded-xl bg-[#101d33] px-7 py-4 text-xs font-black tracking-wider uppercase text-white hover:bg-[#1c2e4a] shadow-lg shadow-neutral-950/15 ring-2 ring-transparent hover:ring-neutral-950 transition-all cursor-pointer mx-auto"
             >
               Jetzt unverbindlich anfragen
               <ArrowUpRight className="h-4.5 w-4.5 text-neutral-400 group-hover:text-white" />
@@ -671,10 +676,10 @@ export default function App() {
 
           {/* Header section of Section 2 */}
           <div className="mx-auto max-w-3xl mb-16 space-y-4">
-            <h2 className="text-4xl font-extrabold text-black sm:text-5xl tracking-tight uppercase">
+            <h2 className="text-4xl font-extrabold text-[#101d33] sm:text-5xl tracking-tight uppercase">
               In 6 Schritten zur Besetzung
             </h2>
-            <p className="text-neutral-500 text-sm font-light max-w-2xl mx-auto leading-relaxed">
+            <p className="text-[#1c2e4a] text-sm font-light max-w-2xl mx-auto leading-relaxed">
               In 6 aufeinander abgestimmten Schritten begleiten wir deutsche Arbeitgeber und vietnamesische Kandidaten bis zur erfolgreichen Zusammenführung und nachhaltigen Integration.
             </p>
           </div>
@@ -702,8 +707,8 @@ export default function App() {
                     {/* Upgraded Circle icon exactly matching high-end recruiting guidelines */}
                     <div className={`relative flex h-28 w-28 items-center justify-center rounded-full transition-all duration-300 z-10 shadow-xl ${
                       isSelected 
-                        ? "bg-[#F59E0B] text-black scale-105 ring-4 ring-[#F59E0B]/30 ring-offset-2 border-transparent" 
-                        : "bg-black text-white group-hover:bg-[#F59E0B] group-hover:text-black group-hover:scale-105"
+                        ? "bg-[#d42027] text-white scale-105 ring-4 ring-[#d42027]/30 ring-offset-2 border-transparent" 
+                        : "bg-[#101d33] text-white group-hover:bg-[#d42027] group-hover:text-white group-hover:scale-105"
                     }`}>
                       
                       {/* Inner accent ring representing structured search connection */}
@@ -712,7 +717,7 @@ export default function App() {
                       }`} />
 
                       <StepIcon className={`h-16 w-16 transition-all duration-300 ${
-                        isSelected ? "text-black scale-105" : "text-white group-hover:text-black group-hover:rotate-6 group-hover:scale-105"
+                        isSelected ? "text-[#1c2e4a] scale-105" : "text-white group-hover:text-[#1c2e4a] group-hover:rotate-6 group-hover:scale-105"
                       }`} />
                     </div>
 
@@ -728,7 +733,7 @@ export default function App() {
                       {/* Solid divider line exact to reference */}
                       <div className="w-full h-[1px] bg-neutral-250 mt-1" />
 
-                      <p className="text-base text-neutral-600 font-light leading-relaxed">
+                      <p className="text-base text-[#1c2e4a] font-light leading-relaxed">
                         {step.subtitle}
                       </p>
                     </div>
@@ -737,7 +742,7 @@ export default function App() {
                     <div className={`mt-3 text-base font-light rounded-lg bg-neutral-50 border border-neutral-150 transition-all duration-300 overflow-hidden ${
                       isSelected ? "opacity-100 max-h-[350px] p-3 visible" : "opacity-0 max-h-0 p-0 border-transparent invisible"
                     }`}>
-                      <p className="text-neutral-600 leading-relaxed">{step.detailText}</p>
+                      <p className="text-[#1c2e4a] leading-relaxed">{step.detailText}</p>
                     </div>
                   </div>
                 );

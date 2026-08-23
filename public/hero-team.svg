@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Pflegekraft, Facharbeiter und Fachkraft im Büro">
+  <!--
+    Hình hero: ba người trẻ châu Á — điều dưỡng, thợ, nhân viên văn phòng.
+    Màu áo thợ và áo vest lấy thẳng từ hệ màu chữ của trang (#1c2e4a / #101d33)
+    nên nhân vật đứng cùng khối chữ không bị chọi màu.
+    Đỏ #d42027 của logo chỉ dùng nhỏ giọt: chữ thập trên túi áo blouse và
+    thẻ tên — đủ để nhận ra thương hiệu, không lấn màu chủ đạo.
+  -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7f9fb"/>
+      <stop offset="100%" stop-color="#eef2f7"/>
+    </linearGradient>
+    <linearGradient id="arch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c2e4a" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#1c2e4a" stop-opacity="0.02"/>
+    </linearGradient>
+    <clipPath id="frame"><rect width="1024" height="1024" rx="0"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1024" height="1024" fill="url(#bg)"/>
+
+    <!-- vòm nền + vệt sáng cửa sổ, gợi không gian văn phòng -->
+    <path d="M132 1024 V430 A380 380 0 0 1 892 430 V1024 Z" fill="url(#arch)"/>
+    <g fill="#ffffff" opacity="0.55">
+      <rect x="72" y="150" width="120" height="330" rx="14"/>
+      <rect x="836" y="196" width="104" height="284" rx="14"/>
+    </g>
+    <g fill="#1c2e4a" opacity="0.06">
+      <circle cx="150" cy="742" r="58"/>
+      <circle cx="884" cy="700" r="44"/>
+    </g>
+
+    <!-- bóng đổ dưới chân -->
+    <ellipse cx="512" cy="946" rx="330" ry="26" fill="#1c2e4a" opacity="0.09"/>
+
+    <!-- ============================== NGƯỜI 1 — ĐIỀU DƯỠNG (nữ) -->
+    <g>
+      <!-- thân: áo blouse trắng ngà, viền navy -->
+      <path d="M196 950 V612 a104 104 0 0 1 104-104 h32 a104 104 0 0 1 104 104 V950 Z" fill="#f2f6fa"/>
+      <path d="M196 950 V612 a104 104 0 0 1 104-104 h10 v446 Z" fill="#e4ebf3"/>
+      <!-- cổ chữ V + áo lót navy -->
+      <path d="M282 508 L316 588 L350 508 Z" fill="#1c2e4a"/>
+      <!-- ống nghe -->
+      <path d="M286 520 C 272 596, 300 640, 316 640 C 332 640, 360 596, 346 520"
+            fill="none" stroke="#1c2e4a" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="316" cy="652" r="16" fill="#1c2e4a"/>
+      <circle cx="316" cy="652" r="7" fill="#f2f6fa"/>
+      <!-- chữ thập đỏ trên túi -->
+      <g fill="#d42027">
+        <rect x="360" y="700" width="38" height="10" rx="3"/>
+        <rect x="374" y="686" width="10" height="38" rx="3"/>
+      </g>
+      <!-- tay trái giơ chào.
+           Tay áo trắng đặt trên nền sáng thì vô hình, chỉ còn bàn tay lơ lửng.
+           Vẽ hai lớp: lớp dưới đậm hơn làm đường viền, lớp trên mới là vải. -->
+      <path d="M214 640 C 170 604, 152 522, 178 472" fill="none" stroke="#cfd9e5" stroke-width="50" stroke-linecap="round"/>
+      <path d="M214 640 C 170 604, 152 522, 178 472" fill="none" stroke="#f2f6fa" stroke-width="42" stroke-linecap="round"/>
+      <circle cx="178" cy="462" r="28" fill="#e9b98e" stroke="#d9a87c" stroke-width="2"/>
+      <!-- cổ + đầu -->
+      <rect x="296" y="418" width="40" height="46" rx="18" fill="#dda87c"/>
+      <circle cx="316" cy="372" r="72" fill="#e9b98e"/>
+      <!-- tóc bob -->
+      <path d="M244 380 a72 72 0 0 1 144 0 v10 c0 -34 -26 -46 -72 -46 s-72 12 -72 46 z" fill="#1a1a22"/>
+      <path d="M244 380 c-6 46 4 78 12 92 l14 -20 c-10 -22 -14 -46 -12 -72 z" fill="#1a1a22"/>
+      <path d="M388 380 c6 46 -4 78 -12 92 l-14 -20 c10 -22 14 -46 12 -72 z" fill="#1a1a22"/>
+      <!-- mắt + miệng cười -->
+      <g fill="#22262e">
+        <circle cx="294" cy="372" r="6"/>
+        <circle cx="338" cy="372" r="6"/>
+      </g>
+      <path d="M298 400 q18 20 36 0" fill="none" stroke="#22262e" stroke-width="6" stroke-linecap="round"/>
+    </g>
+
+    <!-- ============================== NGƯỜI 2 — THỢ (nam), áo xanh #1c2e4a -->
+    <g>
+      <path d="M396 950 V618 a112 112 0 0 1 112-112 h34 a112 112 0 0 1 112 112 V950 Z" fill="#1c2e4a"/>
+      <path d="M396 950 V618 a112 112 0 0 1 112-112 h10 v444 Z" fill="#16253c"/>
+      <!-- nẹp áo + cúc -->
+      <rect x="518" y="506" width="10" height="444" fill="#16253c"/>
+      <g fill="#a8b6c8">
+        <circle cx="523" cy="640" r="6"/>
+        <circle cx="523" cy="712" r="6"/>
+        <circle cx="523" cy="784" r="6"/>
+      </g>
+      <!-- cổ áo bẻ -->
+      <path d="M486 506 L523 560 L560 506 L540 494 L523 520 L506 494 Z" fill="#24395c"/>
+      <!-- túi ngực + bút -->
+      <rect x="566" y="640" width="62" height="52" rx="6" fill="#24395c"/>
+      <rect x="592" y="628" width="9" height="34" rx="4" fill="#d42027"/>
+      <!-- tay khoanh trước ngực -->
+      <path d="M410 700 C 452 754, 594 754, 636 700" fill="none" stroke="#24395c" stroke-width="46" stroke-linecap="round"/>
+      <circle cx="470" cy="742" r="26" fill="#dda87c"/>
+      <circle cx="576" cy="742" r="26" fill="#e9b98e"/>
+      <!-- cổ + đầu -->
+      <rect x="503" y="416" width="42" height="46" rx="18" fill="#c8925f"/>
+      <circle cx="524" cy="366" r="74" fill="#dda87c"/>
+      <!-- tóc ngắn -->
+      <path d="M450 362 a74 74 0 0 1 148 0 c-10 -18 -34 -26 -74 -26 s-64 8 -74 26 z" fill="#1a1a22"/>
+      <path d="M450 362 c0 -8 2 -16 4 -22 l142 0 c2 6 4 14 4 22 -14 -14 -40 -20 -75 -20 s-61 6 -75 20 z" fill="#111119"/>
+      <g fill="#22262e">
+        <circle cx="501" cy="366" r="6"/>
+        <circle cx="547" cy="366" r="6"/>
+      </g>
+      <path d="M505 396 q19 22 38 0" fill="none" stroke="#22262e" stroke-width="6" stroke-linecap="round"/>
+    </g>
+
+    <!-- ============================== NGƯỜI 3 — VEST (nữ) -->
+    <g>
+      <path d="M604 950 V626 a104 104 0 0 1 104-104 h30 a104 104 0 0 1 104 104 V950 Z" fill="#101d33"/>
+      <!-- áo sơ mi trắng bên trong -->
+      <path d="M690 522 L722 606 L754 522 L738 950 L706 950 Z" fill="#f6f8fb"/>
+      <!-- ve áo vest -->
+      <path d="M690 522 L722 606 L700 640 L666 546 Z" fill="#18294a"/>
+      <path d="M754 522 L722 606 L744 640 L778 546 Z" fill="#18294a"/>
+      <!-- thẻ tên đỏ -->
+      <rect x="770" y="676" width="46" height="30" rx="5" fill="#d42027"/>
+      <rect x="778" y="686" width="30" height="4" rx="2" fill="#ffffff" opacity="0.85"/>
+      <rect x="778" y="694" width="20" height="4" rx="2" fill="#ffffff" opacity="0.6"/>
+      <!-- tay phải giơ ngón cái -->
+      <path d="M826 660 C 862 622, 872 560, 856 512" fill="none" stroke="#f2f6fa" stroke-width="52" stroke-linecap="round"/>
+      <path d="M826 660 C 862 622, 872 560, 856 512" fill="none" stroke="#101d33" stroke-width="44" stroke-linecap="round"/>
+      <g>
+        <circle cx="854" cy="492" r="27" fill="#e9b98e"/>
+        <rect x="846" y="452" width="17" height="34" rx="8" fill="#e9b98e"/>
+      </g>
+      <!-- cổ + đầu -->
+      <rect x="702" y="432" width="40" height="46" rx="18" fill="#c8925f"/>
+      <circle cx="722" cy="384" r="72" fill="#dda87c"/>
+      <!-- tóc buộc đuôi -->
+      <path d="M650 392 a72 72 0 0 1 144 0 c-8 -30 -36 -46 -72 -46 s-64 16 -72 46 z" fill="#1a1a22"/>
+      <path d="M790 392 c26 8 38 34 34 62 -3 22 -16 38 -30 42 -8 -30 -12 -66 -4 -104 z" fill="#1a1a22"/>
+      <g fill="#22262e">
+        <circle cx="700" cy="384" r="6"/>
+        <circle cx="744" cy="384" r="6"/>
+      </g>
+      <path d="M704 412 q18 20 36 0" fill="none" stroke="#22262e" stroke-width="6" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>
