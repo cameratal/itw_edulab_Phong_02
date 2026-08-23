@@ -465,8 +465,8 @@ export default function App() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
-            {/* Left Col: Portrait of Founders (corresponds to image 3) */}
-            <div className="lg:col-span-6 relative">
+            {/* Portrait: below the copy on small screens, left column on large screens */}
+            <div className="lg:col-span-6 relative order-2 lg:order-1">
               <div className="relative mx-auto max-w-lg space-y-6">
                 
                 {/* Dynamically renders photo representing Ngoc Nguyen or Frank Deubler */}
@@ -545,8 +545,8 @@ export default function App() {
               </div>
             </div>
 
-            {/* Right Col: About us texts (exactly as in the prompt for Trang 3) */}
-            <div className="lg:col-span-6 text-left space-y-6">
+            {/* About us texts: first on small screens, right column on large screens */}
+            <div className="lg:col-span-6 text-left space-y-6 order-1 lg:order-2">
               <h3 className="text-4xl font-extrabold text-[#101d33] sm:text-5xl tracking-tight uppercase">
                 Wer wir sind
               </h3>
@@ -686,12 +686,8 @@ export default function App() {
 
           {/* Connected timeline (corresponds directly to image 2 "In 6 Schritten zur Besetzung") */}
           <div className="relative">
-            {/* Timeline connector axis lines */}
-            {/* Desktop Horizontal Line */}
+            {/* Desktop Horizontal Line through circle centers */}
             <div className="hidden lg:block absolute left-[8%] right-[8%] top-[56px] h-1 bg-[#1c2e4a] z-0" />
-            
-            {/* Mobile/Tablet Vertical Line */}
-            <div className="block lg:hidden absolute left-1/2 -translate-x-1/2 top-14 bottom-48 w-1 bg-[#1c2e4a] z-0" />
 
             <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 gap-y-16 relative z-10">
               {recruitmentSteps.map((step) => {
@@ -702,10 +698,16 @@ export default function App() {
                   <div 
                     key={step.id}
                     onClick={() => setSelectedProcessStep(isSelected ? null : step.id)}
-                    className="flex flex-col items-center cursor-pointer group"
+                    className="group relative flex flex-row lg:flex-col items-start lg:items-center gap-5 lg:gap-0 cursor-pointer"
                   >
+                    {/* Mobile connector: through circle centers, left of the labels */}
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute left-14 top-14 bottom-[-4rem] w-1 -translate-x-1/2 bg-[#1c2e4a] lg:hidden group-last:hidden"
+                    />
+
                     {/* Upgraded Circle icon exactly matching high-end recruiting guidelines */}
-                    <div className={`relative flex h-28 w-28 items-center justify-center rounded-full transition-all duration-300 z-10 shadow-xl ${
+                    <div className={`relative flex h-28 w-28 shrink-0 items-center justify-center rounded-full transition-all duration-300 z-10 shadow-xl ${
                       isSelected 
                         ? "bg-[#d42027] text-white scale-105 ring-4 ring-[#d42027]/30 ring-offset-2 border-transparent" 
                         : "bg-[#101d33] text-white group-hover:bg-[#d42027] group-hover:text-white group-hover:scale-105"
@@ -721,28 +723,30 @@ export default function App() {
                       }`} />
                     </div>
 
-                    {/* Step descriptions */}
-                    <div className="mt-5 space-y-3 w-full max-w-[180px] text-center">
-                      <div className="flex items-center justify-center gap-1.5 text-center">
-                        <span className="text-lg font-extrabold text-[#1c2e4a]">{step.stepNum}</span>
-                        <span className="text-sm font-extrabold text-[#1c2e4a] tracking-tight leading-none">
-                          {step.shortTitle === "Bedarfsanalyse" ? "Bedarfsanalyse" : step.shortTitle}
-                        </span>
+                    {/* Step descriptions + expandable detail (beside circle on mobile) */}
+                    <div className="min-w-0 flex-1 pt-3 lg:mt-5 lg:w-full lg:max-w-[180px] lg:flex-none lg:pt-0">
+                      <div className="space-y-3 w-full text-left lg:text-center">
+                        <div className="flex items-center justify-start lg:justify-center gap-1.5">
+                          <span className="text-lg font-extrabold text-[#1c2e4a]">{step.stepNum}</span>
+                          <span className="text-sm font-extrabold text-[#1c2e4a] tracking-tight leading-none">
+                            {step.shortTitle === "Bedarfsanalyse" ? "Bedarfsanalyse" : step.shortTitle}
+                          </span>
+                        </div>
+                        
+                        {/* Solid divider line exact to reference */}
+                        <div className="w-full h-[1px] bg-neutral-250 mt-1" />
+
+                        <p className="text-base text-[#1c2e4a] font-light leading-relaxed">
+                          {step.subtitle}
+                        </p>
                       </div>
-                      
-                      {/* Solid divider line exact to reference */}
-                      <div className="w-full h-[1px] bg-neutral-250 mt-1" />
 
-                      <p className="text-base text-[#1c2e4a] font-light leading-relaxed">
-                        {step.subtitle}
-                      </p>
-                    </div>
-
-                    {/* Expandable detailed drawer on tap */}
-                    <div className={`mt-3 text-base font-light rounded-lg bg-neutral-50 border border-neutral-150 transition-all duration-300 overflow-hidden ${
-                      isSelected ? "opacity-100 max-h-[350px] p-3 visible" : "opacity-0 max-h-0 p-0 border-transparent invisible"
-                    }`}>
-                      <p className="text-[#1c2e4a] leading-relaxed">{step.detailText}</p>
+                      {/* Expandable detailed drawer on tap */}
+                      <div className={`mt-3 text-base font-light rounded-lg bg-neutral-50 border border-neutral-150 transition-all duration-300 overflow-hidden ${
+                        isSelected ? "opacity-100 max-h-[350px] p-3 visible" : "opacity-0 max-h-0 p-0 border-transparent invisible"
+                      }`}>
+                        <p className="text-[#1c2e4a] leading-relaxed">{step.detailText}</p>
+                      </div>
                     </div>
                   </div>
                 );
