@@ -469,15 +469,13 @@ export default function App() {
             <div className="lg:col-span-6 relative order-2 lg:order-1">
               <div className="relative mx-auto max-w-lg space-y-6">
                 
-                {/* Dynamically renders photo representing Ngoc Nguyen or Frank Deubler */}
+                {/* Dynamically renders photo representing Ly Herzog or Frank Deubler */}
                 <div className="aspect-[4/4] rounded-xl overflow-hidden bg-neutral-200 relative">
                   {activeFounder === "son" ? (                    
                     <img 
                       key="son-img"
-                      // src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800&h=600"
-                      /**test */
-                      src="/itw-edulab_direktor_02.png "
-                      alt="Ngoc Nguyen - ITW EduLab Gründer & Geschäftsführer"
+                      src="/LyHerzog.png"
+                      alt="Ly Herzog - ITW EduLab Gründerin & Geschäftsführerin"
                       className="h-full w-full object-cover transition-all duration-300"
                       referrerPolicy="no-referrer"
                     />                   
@@ -494,10 +492,10 @@ export default function App() {
                   <div className="absolute inset-x-0 bottom-0 bg-[#101d33]/70 p-4 text-white backdrop-blur-xs flex items-center justify-between">
                     <div>
                       <div className="text-xs font-black uppercase text-brand">
-                        {activeFounder === "son" ? "Ngoc Nguyen" : "Prof. Dr. (UA) Frank Deubler"}
+                        {activeFounder === "son" ? "Ly Herzog" : "Prof. Dr. (UA) Frank Deubler"}
                       </div>
                       <div className="text-[10px] text-neutral-300">
-                        {activeFounder === "son" ? "Gründer & Geschäftsführer" : "Generalbevollmächtigter"}
+                        {activeFounder === "son" ? "Gründerin & Geschäftsführerin" : "Generalbevollmächtigter"}
                       </div>
                     </div>
                     <div className="text-[10px] font-semibold border border-neutral-500 rounded px-1 text-neutral-200">
@@ -517,10 +515,10 @@ export default function App() {
                     }`}
                   >
                     <h5 className={`font-extrabold text-xs transition-colors duration-300 ${activeFounder === "son" ? "text-[#d42027]" : "text-[#1c2e4a]"}`}>
-                      Ngoc Nguyen
+                      Ly Herzog
                     </h5>
                     <p className={`text-[9px] uppercase tracking-wide mt-0.5 transition-colors duration-300 ${activeFounder === "son" ? "text-neutral-300" : "text-[#1c2e4a]"}`}>
-                      Gründer &amp; Geschäftsführer
+                      Gründerin &amp; Geschäftsführerin
                     </p>
                   </div>
                   
@@ -558,7 +556,7 @@ export default function App() {
                 {activeFounder === "son" ? (
                   <>
                     <p>
-                      <strong className="text-[#1c2e4a] font-semibold">Ngoc Nguyen</strong>, Gründer von ITW EduLab, ist seit 2012 ein verlässlicher Kooperationspartner von Berufsschulen, Ausbildungswerkstätten und Universitäten in Vietnam – mit Schwerpunkten in Hanoi und Ho Chi Minh Stadt.
+                      <strong className="text-[#1c2e4a] font-semibold">Ly Herzog</strong>, Gründerin von ITW EduLab, ist seit 2012 ein verlässlicher Kooperationspartner von Berufsschulen, Ausbildungswerkstätten und Universitäten in Vietnam – mit Schwerpunkten in Hanoi und Ho Chi Minh Stadt.
                     </p>
                     <p>
                       Unser Netzwerk umfasst derzeit <strong className="text-[#1c2e4a] font-semibold">über 20 etablierte Partnerinstitutionen</strong> und bietet Ihnen eine breite Auswahl an qualifizierten Fachkräften aus verschiedenen Berufszweigen, unter anderem im Handwerk, in der Pflege und im Gastgewerbe.

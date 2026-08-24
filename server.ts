@@ -187,7 +187,7 @@ Unternehmensfakten & Standorte:
 - Name: ITW EduLab GmbH.
 - Gegründet: August 2022.
 - Hauptsitz in Deutschland: Herzbergstraße 33-34, 10365 Berlin, Deutschland (Lichtenberg).
-- Gründer & Geschäftsführer: Herr Son Tran. Seit 2012 ein erstklassiger Netzwerkpartner von Fachschulen, Universitäten und Akademien in ganz Vietnam (v.a. Hanoi und Ho-Chi-Minh-Stadt).
+- Gründerin & Geschäftsführerin: Frau Ly Herzog. Seit 2012 ein erstklassiger Netzwerkpartner von Fachschulen, Universitäten und Akademien in ganz Vietnam (v.a. Hanoi und Ho-Chi-Minh-Stadt).
 - Generalbevollmächtigter: Herr Frank Deubler.
 - Netzwerk: Über 20 etablierte staatliche und private Partner-Bildungsakademien und Berufsschulen in Vietnam.
 - Erfahrung: Über 15 Jahre interkulturelle Praxiserfahrung in der deutsch-vietnamesischen Bildungs- und Arbeitskräftevermittlung.
